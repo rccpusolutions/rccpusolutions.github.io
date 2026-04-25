@@ -1,4 +1,4 @@
-/* General Reset */
+/* 1. Basic Reset */
 * { 
     margin: 0; 
     padding: 0; 
@@ -7,69 +7,52 @@
 
 body, html { 
     height: 100%; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    line-height: 1.6; 
+    font-family: 'Arial', sans-serif; 
     overflow-x: hidden;
 }
 
-/* Header Styling */
+/* 2. Header - Naka-fixed sa taas */
 header {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    padding: 15px 5%; 
+    padding: 10px 5%; 
     background-color: #ffffff; 
-    border-bottom: 3px solid #00a651;
+    border-bottom: 4px solid #00a651;
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%; 
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 80px;
 }
 
-.header-left { 
-    display: flex; 
-    align-items: center; 
-}
-
-.header-left img { 
-    height: 50px; 
-    margin-right: 15px; 
-}
-
-.company-name { 
-    font-size: 24px; 
-    font-weight: bold; 
-    color: #004d00; 
-}
+.header-left { display: flex; align-items: center; }
+.header-left img { height: 55px; margin-right: 15px; }
+.company-name { font-size: 26px; font-weight: bold; color: #004d00; }
 
 nav a { 
-    color: #00a651 !important; 
-    text-decoration: none !important; 
-    margin-left: 25px; 
+    color: #00a651; 
+    text-decoration: none; 
+    margin-left: 20px; 
     font-weight: bold; 
     font-size: 16px;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #004d00 !important;
-}
-
-/* Hero Section with Dark Overlay */
+/* 3. Hero Section - Dito lalabas ang Background at Overlay */
 .hero-section {
-    height: 100vh;
+    height: 100vh; /* Full screen height */
+    width: 100%;
     display: flex; 
     justify-content: center; 
     align-items: center; 
     text-align: center;
-    position: relative; 
+    position: relative;
 }
 
-.home-main {
-    /* Eto yung sikreto: Dark Overlay (0.6) bago yung image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('home-bg.jpg'); 
+.home-main-bg {
+    /* Eto yung sikreto para lumutang ang green text: Dark Tint (0.65) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('home-bg.jpg'); 
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
@@ -77,73 +60,62 @@ nav a:hover {
 
 .hero-content { 
     position: relative; 
-    z-index: 1; 
-    max-width: 900px; 
-    padding: 20px; 
+    z-index: 10; 
+    max-width: 850px; 
+    padding: 0 20px; 
 }
 
-/* Text Styling */
+/* 4. Text & Button Styling */
 .hero-content h1 { 
-    font-size: 3.5rem; 
-    color: #00a651; /* Vibrant green mula sa logo */
+    font-size: clamp(32px, 5vw, 55px); /* Responsive size */
+    color: #00a651; /* Green mula sa logo */
     margin-bottom: 15px; 
-    font-weight: 800;
-    text-transform: none;
+    font-weight: 900;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.4);
 }
 
 .tagline { 
     color: white !important; 
-    font-size: 1.5rem; 
+    font-size: clamp(18px, 2vw, 24px); 
     margin-bottom: 35px;
     font-weight: 400;
 }
 
-/* Button Styling */
 .button {
     display: inline-block;
     background-color: #00a651;
     color: white;
-    padding: 14px 35px;
+    padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: 0.3s ease;
 }
 
 .button:hover {
-    background-color: transparent;
-    border: 2px solid #00a651;
-    color: #00a651;
+    background-color: #008c44;
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,166,81,0.4);
 }
 
-/* Footer */
+/* 5. Footer */
 footer { 
     text-align: center; 
-    padding: 25px; 
+    padding: 30px; 
     background-color: #00a651; 
     color: white; 
-    font-size: 14px;
+    position: relative;
 }
 
-/* Responsive for Mobile */
+/* 6. Mobile Responsiveness */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 10px;
+        height: auto;
+        padding: 15px;
     }
-    
     .header-left { margin-bottom: 10px; }
-    
-    nav a {
-        margin: 0 10px;
-        font-size: 14px;
-    }
-
-    .hero-content h1 { font-size: 2.2rem; }
-    .tagline { font-size: 1.1rem; }
-    
-    body { padding-top: 120px; } /* Adjust space para sa mobile menu */
+    nav a { margin: 0 10px; font-size: 14px; }
+    .hero-section { height: 90vh; }
 }
