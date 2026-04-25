@@ -11,7 +11,7 @@ body, html {
     line-height: 1.6;
 }
 
-/* 2. FIXED HEADER - Standard sa lahat ng pages */
+/* 2. FIXED HEADER */
 header {
     display: flex; 
     justify-content: space-between; 
@@ -34,7 +34,7 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 
 body { padding-top: 80px; }
 
-/* 3. HERO CORE - Para sa Home, About, at Contact (Full Background) */
+/* 3. HERO CORE - Para sa Home, About, at Contact */
 .hero-section {
     min-height: 100vh;
     width: 100%;
@@ -56,7 +56,6 @@ body { padding-top: 80px; }
     padding: 20px;
 }
 
-/* Global Titles (Home, About, etc.) */
 h1 { 
     font-size: 55px; 
     color: #00a651; 
@@ -65,14 +64,13 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Global Taglines - Mananatiling Puti */
 p { 
     color: white !important; 
     font-size: 24px; 
     margin-bottom: 30px; 
 }
 
-/* 4. BACKGROUNDS - Ibinabalik ang dating overlay logic */
+/* 4. BACKGROUNDS */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('home-bg.jpg'); }
 .company-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('company-bg.jpg'); }
 .mission-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mission-bg.jpg'); }
@@ -80,7 +78,7 @@ p {
 .services-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('services-bg.jpg'); }
 .contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
-/* 5. SERVICES LIST STYLE - Isolated sa Services page */
+/* 5. SERVICES LIST STYLE */
 .services-vertical-list {
     display: flex;
     flex-direction: column;
@@ -109,46 +107,45 @@ p {
 .services-list-bar:hover { transform: translateY(-5px); }
 .services-list-bar span { color: #004d00 !important; }
 
-/* 6. CONTACT PAGE CARDS - Aesthetic & Professional */
+/* 6. CONTACT PAGE CARDS - Adjusted Size */
 .contact-card-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .contact-card {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px 30px;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 25px 20px; /* Mas maliit na padding */
+    border-radius: 12px;
+    width: 280px; /* Binawasan ang lapad para hindi masyadong malaki */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     transition: 0.4s ease;
-    border-bottom: 6px solid transparent;
+    border-bottom: 5px solid #00a651;
 }
 
 .contact-card:hover {
-    transform: translateY(-10px);
-    border-bottom: 6px solid #00a651;
+    transform: translateY(-8px);
+    background-color: #ffffff;
 }
 
 .contact-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 35px;
+    margin-bottom: 10px;
 }
 
 .contact-card h3 {
     color: #004d00;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
-/* Siguradong itim/dark ang text sa loob ng card */
 .contact-card .contact-detail {
     color: #333 !important; 
-    font-size: 18px !important;
+    font-size: 16px !important; /* Sakto lang na laki ng font */
     font-weight: bold;
     text-shadow: none !important;
     margin-bottom: 0;
@@ -176,6 +173,6 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 32px; }
     p { font-size: 18px; }
-    .contact-card { width: 100%; max-width: 350px; }
+    .contact-card { width: 100%; max-width: 320px; }
     .services-list-bar { max-width: 90%; }
 }
