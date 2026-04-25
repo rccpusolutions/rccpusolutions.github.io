@@ -1,44 +1,36 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: Arial, sans-serif; line-height: 1.6; }
+/* Idagdag o i-update ito sa style.css mo */
 
-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 20px; background-color: #ffffff; border-bottom: 2px solid #00a651;
-    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-}
-body { padding-top: 80px; }
-.header-left { display: flex; align-items: center; }
-.header-left img { height: 50px; margin-right: 10px; }
-.company-name { font-size: 24px; font-weight: bold; color: #004d00; }
-nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
-
-.hero-section {
-    min-height: 100vh;
-    display: flex; justify-content: center; align-items: center; text-align: center;
-    position: relative; background-size: cover; background-position: center;
+.home-main {
+    background-image: url('home-bg.jpg');
 }
 
-.hero-section::before {
-    content: ""; position: absolute; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 0;
+.hero-content h1 {
+    font-size: 50px;
+    color: #00a651; /* Green mula sa logo */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; width: 100%; }
-
-.services-list-bar {
-    display: block; background-color: rgba(255, 255, 255, 0.95);
-    color: #004d00; padding: 22px; margin: 15px auto;
-    max-width: 550px; text-decoration: none; font-weight: bold;
-    font-size: 18px; border-left: 10px solid #00a651;
-    border-radius: 5px; text-align: left;
+.tagline {
+    font-size: 24px !important;
+    font-weight: bold;
+    color: white !important;
+    margin-bottom: 20px;
 }
 
-/* Backgrounds */
-.pu-overview-bg { background-image: url('pu-overview-bg.jpg'); }
-.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg'); }
-.waterproofing-overview-bg { background-image: url('waterproofing-overview-bg.jpg'); }
-.services-bg { background-image: url('services-bg.jpg'); }
+.button {
+    display: inline-block;
+    background-color: #00a651;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
 
-h1 { font-size: 45px; color: #00a651; margin-bottom: 20px; font-weight: bold; }
-p { color: white !important; font-size: 18px; }
-footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
+.button:hover {
+    background-color: #007539;
+    transform: scale(1.05);
+}
