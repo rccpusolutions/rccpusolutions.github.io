@@ -1,68 +1,106 @@
-/* 1. GENERAL RESET */
+/* 1. GENERAL RESET & FONTS */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: Arial, sans-serif; line-height: 1.6; }
+body, html { 
+    height: 100%; 
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6; 
+    scroll-behavior: smooth;
+}
 
-/* 2. FIXED HEADER */
+/* 2. FIXED HEADER (Presentable & Clean) */
 header {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; background-color: #ffffff; border-bottom: 3px solid #00a651;
-    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; height: 80px;
+    padding: 0 5%; background-color: #ffffff; border-bottom: 4px solid #00a651;
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; height: 90px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 .header-left { display: flex; align-items: center; }
-.header-left img { height: 50px; margin-right: 15px; }
-.company-name { font-size: 24px; font-weight: bold; color: #004d00; }
-nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 25px; font-weight: bold; font-size: 16px; }
+.header-left img { height: 60px; margin-right: 15px; }
+.company-name { 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 26px; font-weight: 800; color: #004d00; 
+    letter-spacing: -0.5px;
+}
+nav a { 
+    color: #00a651 !important; text-decoration: none !important; 
+    margin-left: 30px; font-weight: 700; font-size: 15px; 
+    text-transform: uppercase; transition: 0.3s;
+}
+nav a:hover { color: #004d00 !important; }
 
-body { padding-top: 80px; }
+body { padding-top: 90px; }
 
-/* 3. HERO SECTIONS */
+/* 3. HERO SECTION (Aesthetic Layout) */
 .hero-section {
-    min-height: 100vh; width: 100%; display: flex; 
+    min-height: calc(100vh - 90px); width: 100%; display: flex; 
     justify-content: center; align-items: center; text-align: center;
     position: relative; background-size: cover; background-position: center;
 }
-.home-main { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('home-bg.jpg'); }
-.about-hero-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about-bg.jpg'); min-height: 60vh; }
-.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
-
-.hero-content { position: relative; z-index: 10; max-width: 1000px; width: 100%; padding: 20px; }
-.hero-content h1 { font-size: 50px; color: #00a651; margin-bottom: 20px; text-transform: uppercase; font-weight: bold; }
-.hero-content p { color: white !important; font-size: 22px; }
-
-/* HOMEPAGE SPECIFIC (Default Look) */
-.welcome-text { font-size: 60px !important; color: #00a651 !important; display: block; }
-.cta-button {
-    display: inline-block; background-color: #00a651; color: white !important;
-    padding: 15px 40px; font-size: 20px; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 20px;
+.home-main { 
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg'); 
 }
 
-/* 4. ABOUT PAGE CONTENT STYLING */
-.about-container { max-width: 1100px; margin: 50px auto; padding: 20px; text-align: center; }
-.section-title { font-size: 32px; color: #004d00; margin-bottom: 15px; }
-.section-text { font-size: 18px; color: #444; line-height: 1.8; margin-bottom: 30px; }
-.mission-vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; }
-.mv-card { background: #f9f9f9; padding: 30px; border-radius: 12px; border-left: 5px solid #00a651; }
-.highlight-box { background-color: #e6f4ea; padding: 40px; border-radius: 15px; }
+.hero-content { 
+    position: relative; z-index: 10; max-width: 1100px; 
+    width: 100%; padding: 40px 20px; 
+}
 
-/* 5. CONTACT GRID STYLING */
-.contact-grid-wrapper { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px; }
-.grid-long-bar, .grid-short-bar { background-color: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 15px; display: flex; align-items: center; text-decoration: none; }
-.grid-two-cols { display: flex; width: 100%; max-width: 600px; gap: 15px; }
-.grid-short-bar { width: 50%; justify-content: center; }
-.location-inline-bar { width: 100%; max-width: 600px; justify-content: center; }
-.email-icon { color: #D44638; margin-right: 10px; font-size: 22px; }
-.fb-icon { color: #1877F2; margin-right: 10px; font-size: 22px; }
-.ig-icon { color: #E4405F; margin-right: 10px; font-size: 22px; }
-.contact-detail { color: #333 !important; font-weight: bold; }
-.whatsapp-green-bar { width: 100%; max-width: 600px; background-color: #00a651; color: white !important; justify-content: space-between; }
+/* THE TITLE FIX (Fonts & Spacing) */
+.welcome-text { 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px; /* Mas malaki at bold */
+    color: #00a651; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    line-height: 1.1; /* Inayos ang spacing sa pagitan ng mga linya */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
 
-/* 6. FOOTER */
-footer { text-align: center; padding: 40px; background-color: #00a651; color: white; }
+.hero-tagline { 
+    color: white !important; 
+    font-size: 26px; 
+    font-weight: 400;
+    margin-bottom: 45px; 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
 
-/* 7. MOBILE RESPONSIVE */
+/* 4. CTA BUTTON (Modern look) */
+.button-container { display: block; margin-top: 20px; }
+.cta-button {
+    display: inline-block; background-color: #00a651; color: white !important;
+    padding: 18px 50px; font-size: 20px; font-weight: 700; text-decoration: none; 
+    border-radius: 50px; /* Rounded for aesthetic */
+    transition: all 0.4s ease; 
+    box-shadow: 0 6px 20px rgba(0,166,81,0.4);
+    text-transform: uppercase;
+}
+.cta-button:hover { 
+    background-color: #ffffff; color: #00a651 !important;
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 5. FOOTER */
+footer { 
+    text-align: center; padding: 40px; 
+    background-color: #004d00; color: white; 
+    font-size: 14px; letter-spacing: 1px;
+}
+
+/* 6. MOBILE RESPONSIVE (Strict Spacing) */
+.mobile-break { display: none; }
+
 @media (max-width: 768px) {
-    .welcome-text { font-size: 35px !important; }
-    .mission-vision-grid { grid-template-columns: 1fr; }
-    .grid-two-cols { flex-direction: column; }
-    .grid-short-bar { width: 100%; }
+    header { height: auto; padding: 15px 5%; flex-direction: column; }
+    .header-left { margin-bottom: 15px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav a { margin-left: 0; font-size: 13px; }
+    
+    .mobile-break { display: block; }
+    .welcome-text { font-size: 38px !important; line-height: 1.2; }
+    .hero-tagline { font-size: 18px !important; }
+    .cta-button { padding: 15px 35px; font-size: 18px; }
 }
