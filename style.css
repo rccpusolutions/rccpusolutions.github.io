@@ -8,7 +8,6 @@ header {
     padding: 15px 5%; background-color: #ffffff; border-bottom: 3px solid #00a651;
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; height: 80px;
 }
-.header-left { display: flex; align-items: center; }
 .header-left img { height: 50px; margin-right: 15px; }
 .company-name { font-size: 24px; font-weight: bold; color: #004d00; }
 nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 25px; font-weight: bold; font-size: 16px; }
@@ -31,7 +30,6 @@ p { color: white !important; font-size: 20px; margin-bottom: 30px; }
     display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px;
 }
 
-/* Base Bar Style */
 .grid-long-bar, .grid-short-bar {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
@@ -42,37 +40,27 @@ p { color: white !important; font-size: 20px; margin-bottom: 30px; }
     transition: 0.3s ease;
 }
 
-/* ROW 1: Inline Location Bar (Icon beside text) */
+/* ROW 1: Inline Location Bar */
 .location-inline-bar {
-    width: 100%;
-    max-width: 600px;
-    justify-content: center; /* Naka-center ang buong content group */
-    padding: 20px !important;
+    width: 100%; max-width: 600px;
+    justify-content: center; padding: 20px !important;
 }
-
 .contact-icon-inline { font-size: 24px; margin-right: 10px; }
-.contact-detail-inline { 
-    color: #333 !important; 
-    font-size: 18px !important; 
-    font-weight: bold; 
-    text-shadow: none !important; 
-}
+.contact-detail-inline { color: #333 !important; font-size: 18px !important; font-weight: bold; }
 
-/* Gitnang Hanay (Two Columns) */
+/* Row 2 & 3: Two Columns */
 .grid-two-cols {
     display: flex; width: 100%; max-width: 600px; gap: 15px;
 }
-
 .grid-short-bar {
-    width: calc(50% - 7.5px); 
-    padding: 15px 20px; 
-    justify-content: center;
+    width: calc(50% - 7.5px); padding: 15px 20px; justify-content: center;
 }
 
 .clickable-grid-bar:hover { transform: translateY(-3px); background-color: #ffffff; }
 
 /* Icons & Labels */
-.contact-icon, .fab { font-size: 22px; margin-right: 12px; }
+.contact-icon, .fab, .fas { font-size: 22px; margin-right: 12px; }
+.email-icon { color: #D44638; } /* Gmail red color */
 .fb-icon { color: #1877F2; } 
 .ig-icon { color: #E4405F; } 
 .contact-label { font-weight: bold; color: #004d00; margin-right: 10px; flex-grow: 1; text-align: left; }
