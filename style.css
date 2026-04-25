@@ -7,7 +7,7 @@
 body, html { 
     height: 100%; 
     font-family: Arial, sans-serif; 
-    line-height: 1.6; 
+    scroll-behavior: smooth;
 }
 
 header {
@@ -33,6 +33,7 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 /* HERO SECTION CORE */
 .hero-section {
     min-height: 100vh;
+    width: 100%;
     display: flex; 
     justify-content: center; 
     align-items: center; 
@@ -43,7 +44,11 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     background-repeat: no-repeat;
 }
 
-/* BACKGROUNDS SA ABOUT US */
+/* BACKGROUNDS - Siguraduhin na .jpg lahat */
+.home-main {
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg');
+}
+
 .company-bg {
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('company-bg.jpg');
 }
@@ -56,17 +61,11 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('chooseus-bg.jpg');
 }
 
-/* BACKGROUND SA HOME (Para hindi mawala) */
-.home-main {
-    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg');
-}
-
 .hero-content { 
     position: relative; 
     z-index: 1; 
     max-width: 900px; 
     padding: 40px 20px; 
-    width: 100%; 
 }
 
 h1 { 
