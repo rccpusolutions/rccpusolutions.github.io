@@ -1,88 +1,103 @@
-/* RESET & BASE */
+/* 1. CLEAN RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: 'Roboto', sans-serif; overflow-x: hidden; }
+body, html { 
+    height: 100%; 
+    font-family: Arial, Helvetica, sans-serif; /* Standard malinis na font gaya ng nasa screen */
+    background-color: #f4f4f4;
+}
 
-/* HEADER FIX (Logo and Brand alignment) */
+/* 2. HEADER & NAV (Exact Spacing) */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    background: white;
-    border-bottom: 4px solid #00a651;
+    background-color: white;
+    padding: 15px 5%;
+    border-bottom: 2px solid #f0f0f0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 85px;
 }
-.header-left {
+.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px; /* Spacing between logo and text */
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.header-left img {
-    height: 55px;
-    width: auto;
+.logo-section { display: flex; align-items: center; }
+.logo-section img { height: 40px; margin-right: 12px; }
+.brand-name { 
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #448a44; /* Yung tamang green sa text */
 }
-.company-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: #004d00;
-    white-space: nowrap;
-}
+
 nav a {
-    color: #00a651;
     text-decoration: none;
+    color: #448a44;
     margin-left: 20px;
-    font-weight: 700;
     font-size: 14px;
-    text-transform: uppercase;
+    font-weight: 500;
 }
 
-/* HOME PAGE LAYOUT */
-.home-page .home-hero-section {
+/* 3. HERO SECTION (The Background) */
+.main-hero {
     height: 100vh;
-    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('home-bg.jpg') no-repeat center center/cover;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('home-bg.jpg') center/cover no-repeat;
+    align-items: center;
     text-align: center;
-    padding-top: 85px;
+    padding-top: 60px;
 }
-.home-welcome { color: #00a651; font-family: 'Montserrat'; font-size: clamp(35px, 6vw, 60px); font-weight: 800; }
-.home-tagline { color: white; font-size: 24px; margin: 25px 0; }
-.home-cta { background: #00a651; color: white; padding: 18px 45px; text-decoration: none; border-radius: 8px; font-weight: 700; }
 
-/* ABOUT PAGE LAYOUT */
-.about-page .about-fullscreen {
-    height: 100vh;
+/* 4. FONTS & TEXT (Adjusted para hindi OA) */
+.main-title {
+    font-size: 42px; /* Saktong laki lang para sa isang linya */
+    color: #00ce4c; /* Vibrant green gaya ng sa picture */
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+.sub-title {
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* 5. THE BUTTON (View Our Services) */
+.green-btn {
+    background-color: #00ce4c; /* Bright green match sa title */
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    transition: 0.3s;
+}
+.green-btn:hover { background-color: #00a83e; }
+
+/* 6. FOOTER (Ang Solid Green Strip) */
+.solid-footer {
+    background-color: #00ce4c; /* Solid green strip gaya ng sa monitor */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Fixed image background */
-    padding-top: 85px;
+    font-size: 13px;
+    font-weight: bold;
 }
-#company { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about-bg.jpg'); }
-#mission { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mission-bg.jpg'); }
-#why-choose { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('why-bg.jpg'); }
 
-.about-overlay { text-align: center; color: white; padding: 20px; max-width: 900px; }
-.about-title { color: #00a651; font-family: 'Montserrat'; font-size: clamp(35px, 5vw, 55px); font-weight: 800; margin-bottom: 20px; }
-.about-text { font-size: 22px; font-weight: 500; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-
-/* FOOTER */
-.main-footer { text-align: center; padding: 30px; background: #00a651; color: white; font-weight: bold; width: 100%; }
-
-/* MOBILE FIX */
+/* 7. MOBILE RESPONSIVE FIX */
 @media (max-width: 768px) {
-    header { height: auto; flex-direction: column; padding: 15px; }
-    .header-left { margin-bottom: 10px; }
-    nav { margin-top: 5px; }
-    .about-page .about-fullscreen { background-attachment: scroll; height: auto; min-height: 100vh; }
+    .main-title { font-size: 26px; padding: 0 10px; }
+    .sub-title { font-size: 15px; }
+    .header-container { flex-direction: column; }
+    nav { margin-top: 10px; }
+    nav a { margin: 0 8px; font-size: 12px; }
+    .solid-footer { padding: 10px; font-size: 11px; position: relative; } /* Relative sa mobile para hindi takpan ang content */
 }
