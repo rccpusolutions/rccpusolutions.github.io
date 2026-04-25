@@ -15,80 +15,54 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 
 body { padding-top: 80px; }
 
-/* 3. HERO CORE */
+/* 3. HERO SECTIONS */
 .hero-section {
     min-height: 100vh; width: 100%; display: flex; 
     justify-content: center; align-items: center; text-align: center;
     position: relative; background-size: cover; background-position: center;
 }
-
-/* Background Overlays */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('home-bg.jpg'); }
+.about-hero-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about-bg.jpg'); min-height: 60vh; }
 .contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
 .hero-content { position: relative; z-index: 10; max-width: 1000px; width: 100%; padding: 20px; }
+.hero-content h1 { font-size: 50px; color: #00a651; margin-bottom: 20px; text-transform: uppercase; font-weight: bold; }
+.hero-content p { color: white !important; font-size: 22px; }
 
-/* 4. HOMEPAGE DEFAULT (Balik sa dati, hindi na mapuputol) */
-.welcome-text { 
-    font-size: 60px; 
-    color: #00a651; 
-    margin-bottom: 20px; 
-    font-weight: bold; 
-    text-transform: uppercase;
-    display: block; /* Pinapayagan mag-wrap kung maliit ang screen para hindi maputol */
-}
-
-/* Default Tagline Color */
-p { color: white !important; font-size: 20px; margin-bottom: 30px; }
-
-/* Default Button Styling */
+/* HOMEPAGE SPECIFIC (Default Look) */
+.welcome-text { font-size: 60px !important; color: #00a651 !important; display: block; }
 .cta-button {
     display: inline-block; background-color: #00a651; color: white !important;
-    padding: 15px 40px; font-size: 20px; font-weight: bold; text-decoration: none;
-    border-radius: 8px; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-.cta-button:hover { background-color: #008c44; transform: scale(1.05); }
-
-/* 5. CONTACT PAGE GRID (Isolated para hindi makialam sa Homepage) */
-.contact-grid-wrapper {
-    display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px;
-}
-.grid-long-bar, .grid-short-bar {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-decoration: none; display: flex; align-items: center; transition: 0.3s ease;
+    padding: 15px 40px; font-size: 20px; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 20px;
 }
 
-/* Location Bar Fix */
-.location-inline-bar { width: 100%; max-width: 600px; justify-content: center; padding: 20px !important; }
-.contact-icon-inline { font-size: 24px; margin-right: 10px; }
-.contact-detail-inline { color: #333 !important; font-size: 18px !important; font-weight: bold; }
+/* 4. ABOUT PAGE CONTENT STYLING */
+.about-container { max-width: 1100px; margin: 50px auto; padding: 20px; text-align: center; }
+.section-title { font-size: 32px; color: #004d00; margin-bottom: 15px; }
+.section-text { font-size: 18px; color: #444; line-height: 1.8; margin-bottom: 30px; }
+.mission-vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; }
+.mv-card { background: #f9f9f9; padding: 30px; border-radius: 12px; border-left: 5px solid #00a651; }
+.highlight-box { background-color: #e6f4ea; padding: 40px; border-radius: 15px; }
 
-/* Grid for Two Columns */
+/* 5. CONTACT GRID STYLING */
+.contact-grid-wrapper { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px; }
+.grid-long-bar, .grid-short-bar { background-color: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 15px; display: flex; align-items: center; text-decoration: none; }
 .grid-two-cols { display: flex; width: 100%; max-width: 600px; gap: 15px; }
-.grid-short-bar { width: calc(50% - 7.5px); padding: 15px 20px; justify-content: center; }
-
-/* Icons & Colors */
-.contact-icon, .fab, .fas { font-size: 22px; margin-right: 12px; }
-.email-icon { color: #D44638; }
-.fb-icon { color: #1877F2; } 
-.ig-icon { color: #E4405F; } 
-.contact-detail { color: #333 !important; font-size: 16px !important; text-shadow: none !important; }
-.arrow { color: #00a651; font-weight: bold; margin-left: auto; }
-
-/* WhatsApp Bar */
-.whatsapp-green-bar {
-    width: 100%; max-width: 600px; background-color: #00a651; color: white !important;
-    padding: 18px 30px; justify-content: space-between; font-weight: bold; font-size: 18px; margin-top: 10px;
-}
-.clickable-grid-bar:hover { transform: translateY(-3px); background-color: #ffffff; }
+.grid-short-bar { width: 50%; justify-content: center; }
+.location-inline-bar { width: 100%; max-width: 600px; justify-content: center; }
+.email-icon { color: #D44638; margin-right: 10px; font-size: 22px; }
+.fb-icon { color: #1877F2; margin-right: 10px; font-size: 22px; }
+.ig-icon { color: #E4405F; margin-right: 10px; font-size: 22px; }
+.contact-detail { color: #333 !important; font-weight: bold; }
+.whatsapp-green-bar { width: 100%; max-width: 600px; background-color: #00a651; color: white !important; justify-content: space-between; }
 
 /* 6. FOOTER */
 footer { text-align: center; padding: 40px; background-color: #00a651; color: white; }
 
 /* 7. MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-    .welcome-text { font-size: 35px; }
-    .grid-two-cols { flex-direction: column; gap: 10px; }
-    .grid-short-bar, .grid-long-bar, .whatsapp-green-bar { width: 100%; max-width: 95%; }
+    .welcome-text { font-size: 35px !important; }
+    .mission-vision-grid { grid-template-columns: 1fr; }
+    .grid-two-cols { flex-direction: column; }
+    .grid-short-bar { width: 100%; }
 }
