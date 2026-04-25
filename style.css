@@ -1,121 +1,74 @@
-/* 1. Basic Reset */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: Arial, sans-serif; }
 
-body, html { 
-    height: 100%; 
-    font-family: 'Arial', sans-serif; 
-    overflow-x: hidden;
-}
-
-/* 2. Header - Naka-fixed sa taas */
 header {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    padding: 10px 5%; 
+    padding: 15px 20px; 
     background-color: #ffffff; 
-    border-bottom: 4px solid #00a651;
+    border-bottom: 2px solid #00a651;
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%; 
     z-index: 1000;
-    height: 80px;
 }
 
+body { padding-top: 80px; }
 .header-left { display: flex; align-items: center; }
-.header-left img { height: 55px; margin-right: 15px; }
-.company-name { font-size: 26px; font-weight: bold; color: #004d00; }
+.header-left img { height: 50px; margin-right: 10px; }
+.company-name { font-size: 24px; font-weight: bold; color: #004d00; }
+nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
 
-nav a { 
-    color: #00a651; 
-    text-decoration: none; 
-    margin-left: 20px; 
-    font-weight: bold; 
-    font-size: 16px;
-}
-
-/* 3. Hero Section - Dito lalabas ang Background at Overlay */
-.hero-section {
-    height: 100vh; /* Full screen height */
-    width: 100%;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-    position: relative;
-}
-
-.home-main-bg {
-    /* Eto yung sikreto para lumutang ang green text: Dark Tint (0.65) */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('home-bg.jpg'); 
-    background-size: cover; 
+/* Centering and Background */
+.home-main {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg');
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.hero-content { 
-    position: relative; 
-    z-index: 10; 
-    max-width: 850px; 
-    padding: 0 20px; 
+.hero-content h1 {
+    font-size: 45px;
+    color: #00a651;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-/* 4. Text & Button Styling */
-.hero-content h1 { 
-    font-size: clamp(32px, 5vw, 55px); /* Responsive size */
-    color: #00a651; /* Green mula sa logo */
-    margin-bottom: 15px; 
-    font-weight: 900;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-}
-
-.tagline { 
-    color: white !important; 
-    font-size: clamp(18px, 2vw, 24px); 
-    margin-bottom: 35px;
-    font-weight: 400;
+.hero-content p {
+    color: white !important;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: normal;
 }
 
 .button {
     display: inline-block;
     background-color: #00a651;
     color: white;
-    padding: 15px 40px;
+    padding: 15px 35px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 5px;
     font-size: 18px;
-    transition: 0.3s ease;
 }
 
-.button:hover {
-    background-color: #008c44;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,166,81,0.4);
-}
-
-/* 5. Footer */
 footer { 
     text-align: center; 
     padding: 30px; 
     background-color: #00a651; 
     color: white; 
-    position: relative;
 }
 
-/* 6. Mobile Responsiveness */
+/* Mobile basic adjustment */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-    }
-    .header-left { margin-bottom: 10px; }
-    nav a { margin: 0 10px; font-size: 14px; }
-    .hero-section { height: 90vh; }
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 18px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; }
+    nav a { margin: 5px 10px; font-size: 14px; }
 }
