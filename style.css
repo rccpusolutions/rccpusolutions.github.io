@@ -34,7 +34,7 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 
 body { padding-top: 80px; }
 
-/* 3. HERO CORE - Para sa Home, About, at Contact */
+/* 3. HERO CORE */
 .hero-section {
     min-height: 100vh;
     width: 100%;
@@ -51,7 +51,7 @@ body { padding-top: 80px; }
 .hero-content { 
     position: relative; 
     z-index: 10; 
-    max-width: 1100px; 
+    max-width: 1200px; 
     width: 100%; 
     padding: 20px;
 }
@@ -105,25 +105,27 @@ p {
 }
 
 .services-list-bar:hover { transform: translateY(-5px); }
-.services-list-bar span { color: #004d00 !important; }
 
-/* 6. CONTACT PAGE CARDS - Adjusted Size */
+/* 6. CONTACT PAGE CARDS */
 .contact-card-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
     margin-top: 30px;
 }
 
 .contact-card {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 25px 20px; /* Mas maliit na padding */
+    padding: 20px 15px;
     border-radius: 12px;
-    width: 280px; /* Binawasan ang lapad para hindi masyadong malaki */
+    width: 220px; /* Mas compact para magkasya ang lima */
     box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     transition: 0.4s ease;
     border-bottom: 5px solid #00a651;
+    text-decoration: none; /* Inalis ang underline sa link cards */
+    display: block;
+    cursor: pointer;
 }
 
 .contact-card:hover {
@@ -132,36 +134,26 @@ p {
 }
 
 .contact-icon {
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
 .contact-card h3 {
     color: #004d00;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 8px;
     text-transform: uppercase;
 }
 
 .contact-card .contact-detail {
     color: #333 !important; 
-    font-size: 16px !important; /* Sakto lang na laki ng font */
+    font-size: 14px !important;
     font-weight: bold;
     text-shadow: none !important;
     margin-bottom: 0;
 }
 
-/* 7. BUTTONS & FOOTER */
-.button {
-    display: inline-block;
-    background-color: #00a651;
-    color: white !important;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
+/* 7. FOOTER */
 footer { 
     text-align: center; 
     padding: 40px; 
@@ -173,6 +165,5 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 32px; }
     p { font-size: 18px; }
-    .contact-card { width: 100%; max-width: 320px; }
-    .services-list-bar { max-width: 90%; }
+    .contact-card { width: 45%; max-width: 100%; } /* Two cards per row sa mobile */
 }
