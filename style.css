@@ -108,59 +108,83 @@ p {
 .services-list-bar:hover { transform: translateY(-5px); }
 .services-list-bar span { color: #004d00 !important; }
 
-/* 6. CONTACT PAGE LONG BARS */
-.contact-bar-container {
+/* 6. NEW GRID LAYOUT FOR CONTACTS (Based on Sketch) */
+.contact-grid-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 15px; /* Spacing sa pagitan ng mga rows */
     align-items: center;
     margin-top: 30px;
 }
 
-.contact-long-bar {
+/* Common style para sa lahat ng bars (long at short) */
+.contact-long-bar, .grid-short-bar {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 15px 25px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 550px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-align: left;
-    text-decoration: none;
     transition: 0.3s ease;
 }
 
-.clickable-bar:hover {
-    transform: translateY(-5px);
+/* Long Bars (Row 1 at Row 4) */
+.contact-long-bar {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 25px;
+}
+
+/* Gitnang Hanay (Row 2 at Row 3): 2-columns */
+.grid-two-cols {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 550px;
+    gap: 15px; /* Spacing sa pagitan ng dalawang maliliit na bars */
+}
+
+.grid-short-bar {
+    width: calc(50% - 7.5px); /* Hinati sa dalawa, minus spacing */
+    padding: 15px 20px;
+    text-align: left;
+}
+
+/* Clickable bar style */
+.clickable-grid-bar:hover {
+    transform: translateY(-3px);
     background-color: #ffffff;
 }
 
-.contact-icon, .fab { font-size: 24px; margin-right: 15px; }
+/* Typography sa loob ng Bars */
+.contact-icon, .fab { font-size: 20px; margin-right: 12px; }
 .fb-icon { color: #1877F2; } 
 .ig-icon { color: #E4405F; } 
 
-.contact-label { font-weight: bold; color: #004d00; margin-right: 10px; font-size: 18px; flex-grow: 1; }
-.contact-info-text { color: #333 !important; font-size: 18px !important; text-shadow: none !important; }
+.contact-label { font-weight: bold; color: #004d00; font-size: 16px; flex-grow: 1; }
+.contact-detail { color: #333 !important; font-size: 16px !important; text-shadow: none !important; }
 .arrow { color: #00a651; font-weight: bold; }
 
-/* WhatsApp Green Bar */
+/* Top Label Bar Specific (Row 1) */
+.top-label-bar h3 {
+    width: 100%;
+    text-align: center;
+    color: #004d00;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* WhatsApp Green Bar (Row 4) */
 .whatsapp-green-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #00a651; 
     color: white !important;
     padding: 18px 30px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 550px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
     margin-top: 10px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    transition: 0.3s ease;
+    justify-content: space-between; /* Icon at text magkakalayo */
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .whatsapp-green-bar:hover {
@@ -182,5 +206,17 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 32px; }
     p { font-size: 18px; }
-    .contact-long-bar, .whatsapp-green-bar { max-width: 95%; font-size: 16px; padding: 12px 20px; }
+    
+    .contact-grid-wrapper, .top-label-bar, .grid-two-cols, .whatsapp-green-bar {
+        max-width: 95%;
+    }
+    
+    .grid-two-cols {
+        flex-direction: column; /* Mag-stack sa mobile */
+        gap: 10px;
+    }
+    
+    .grid-short-bar {
+        width: 100%; /* Full width sa mobile */
+    }
 }
