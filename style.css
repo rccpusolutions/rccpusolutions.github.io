@@ -19,10 +19,7 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 /* 2. HERO & BACKGROUND LOGIC (ALL DEVICES) */
 /* ============================================================ */
 .home-main, .hero-section, .services-bg, .pu-overview-bg, 
-.company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
-.dressingplant-bg, .hatchery-bg, .epoxy-overview-bg, 
-.epoxy-mortar-bg, .epoxy-paint-bg, .waterproofing-overview-bg, 
-.roofdeck-bg, .toilet-bath-bg, .contact-bg {
+.company-bg, .mission-bg, .chooseus-bg, .contact-bg {
     min-height: 80vh;
     display: flex !important;
     justify-content: center;
@@ -32,10 +29,9 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
 }
 
-.home-main::before, .hero-section::before, .services-bg::before, [class*="-bg"]::before {
+.home-main::before, .hero-section::before, [class*="-bg"]::before {
     content: ""; position: absolute; width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 0;
 }
@@ -45,19 +41,18 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 /* BRANDING COLORS */
 .green-text { color: #00a651 !important; font-weight: bold !important; }
 .hero-content h1 { font-size: 45px; margin-bottom: 20px; color: #00a651; font-weight: bold; }
-.hero-content p { font-size: 20px; margin-bottom: 30px; color: white !important; }
+.hero-content p { font-size: 20px; color: white !important; }
 
 /* ============================================================ */
-/* 3. MISSION, VISION, & ABOUT CONTENT (NO BOXES) */
+/* 3. ABOUT PAGE: MISSION & VISION (NO BOXES) */
 /* ============================================================ */
-.combined-content { max-width: 800px; margin: 0 auto; text-align: center; }
-.text-heading { margin-top: 40px; font-size: 32px; }
+.text-heading { margin-top: 40px; font-size: 32px; color: #00a651 !important; font-weight: bold; }
 .text-body { color: white !important; font-size: 18px !important; margin-top: 10px; margin-bottom: 10px; }
 
 /* ============================================================ */
-/* 4. SERVICE LIST BARS (ITO ANG IBABALIK NATIN) */
+/* 4. SERVICE LIST BARS (THE FIX) */
 /* ============================================================ */
-.services-list-bar, a.services-list-bar {
+.services-list-bar {
     display: block !important;
     background-color: rgba(255, 255, 255, 0.95) !important;
     color: #004d00 !important;
@@ -73,40 +68,27 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     transition: 0.3s;
 }
 
-.services-list-bar:hover {
-    background-color: #e0f2e9 !important;
-    transform: scale(1.02);
-}
+.services-list-bar:hover { background-color: #ffffff !important; transform: scale(1.02); }
 
 /* ============================================================ */
-/* 5. BACKGROUND IMAGE MAPPING */
+/* 5. BACKGROUND IMAGES */
 /* ============================================================ */
 .home-main { background-image: url('home-bg.jpg') !important; }
 .services-bg { background-image: url('services-bg.jpg') !important; }
 .company-bg { background-image: url('company-bg.jpg') !important; }
 .mission-bg { background-image: url('mission-bg.jpg') !important; }
 .chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
-.pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
-.coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
-.dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
-.hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
-.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
-.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
-.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
-.waterproofing-overview-bg { background-image: url('waterproofing-overview-bg.jpg') !important; }
-.roofdeck-bg { background-image: url('roofdeck-bg.jpg') !important; }
-.toilet-bath-bg { background-image: url('toilet-bath-bg.jpg') !important; }
 .contact-bg { background-image: url('contact-bg.jpg') !important; }
 
 /* ============================================================ */
-/* 6. WHY CHOOSE US (LIST BARS) */
+/* 6. WHY CHOOSE US LIST */
 /* ============================================================ */
-.chooseus-bg ul { list-style: none !important; padding: 0 !important; max-width: 700px !important; margin: 0 auto !important; }
+.chooseus-bg ul { list-style: none; padding: 0; max-width: 700px; margin: 0 auto; }
 .chooseus-bg ul li {
-    display: block !important; background-color: rgba(224, 242, 233, 0.95) !important;
-    margin: 12px 0 !important; padding: 18px 25px !important; border-radius: 5px !important;
-    font-weight: bold !important; color: #004d00 !important; text-align: left !important;
-    border-left: 10px solid #00a651 !important; font-size: 16px !important;
+    background-color: rgba(224, 242, 233, 0.95);
+    margin: 12px 0; padding: 18px 25px; border-radius: 5px;
+    font-weight: bold; color: #004d00; text-align: left;
+    border-left: 10px solid #00a651;
 }
 
 /* ============================================================ */
@@ -115,22 +97,19 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 .contact-info-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
 .contact-item {
     background-color: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 8px;
-    min-width: 250px; color: #004d00; font-size: 16px; border-bottom: 5px solid #00a651;
+    min-width: 250px; color: #004d00; border-bottom: 5px solid #00a651;
 }
 
-/* ============================================================ */
-/* 8. BUTTONS & FOOTER */
-/* ============================================================ */
 .button {
     display: inline-block !important; background-color: #00a651 !important;
     color: white !important; padding: 15px 35px !important; border-radius: 5px !important;
-    text-decoration: none !important; font-weight: bold !important; cursor: pointer;
+    text-decoration: none !important; font-weight: bold !important; margin-top: 20px;
 }
 
 footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
 
 /* ============================================================ */
-/* 9. MOBILE RESPONSIVENESS */
+/* 8. MOBILE RESPONSIVENESS */
 /* ============================================================ */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
@@ -138,9 +117,7 @@ footer { text-align: center; padding: 30px; background-color: #00a651; color: wh
     nav a { margin: 0 10px; font-size: 14px; }
     body { padding-top: 130px; }
     .hero-content h1 { font-size: 28px !important; }
-    .hero-content p, .text-body { font-size: 16px !important; }
-    .text-heading { font-size: 24px !important; }
-    .hero-section, .home-main, [class*="-bg"] { min-height: 400px !important; background-attachment: scroll !important; }
+    .hero-section, .home-main { min-height: 450px !important; }
     .contact-info-container { flex-direction: column; align-items: center; }
     .contact-item, .services-list-bar { width: 90%; }
 }
