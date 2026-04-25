@@ -7,16 +7,13 @@ header {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
 }
 body { padding-top: 80px; }
-
-/* NAVIGATION */
 .header-left { display: flex; align-items: center; }
 .header-left img { height: 50px; margin-right: 10px; }
 .company-name { font-size: 24px; font-weight: bold; color: #004d00; }
 nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
 
-/* FULL SCREEN SECTIONS */
 .hero-section, [class*="-bg"] {
-    min-height: 100vh; /* Para mapuno ang screen bago mag-scroll */
+    min-height: 100vh;
     display: flex; justify-content: center; align-items: center; text-align: center;
     position: relative; background-size: cover; background-position: center;
 }
@@ -28,7 +25,6 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 
 .hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; width: 100%; }
 
-/* WHITE SERVICES BARS */
 .services-list-bar {
     display: block; background-color: rgba(255, 255, 255, 0.95);
     color: #004d00; padding: 22px; margin: 15px auto;
@@ -36,14 +32,12 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     font-size: 18px; border-left: 10px solid #00a651;
     border-radius: 5px; text-align: left; transition: 0.3s;
 }
-.services-list-bar:hover { transform: scale(1.02); background-color: #ffffff; }
 
 /* BACKGROUNDS */
 .services-bg { background-image: url('services-bg.jpg'); }
 .pu-overview-bg { background-image: url('pu-overview-bg.jpg'); }
 .pu-services-bg { background-image: url('pu-overview-bg.jpg'); }
 .epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg'); }
-.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg'); }
 .waterproofing-overview-bg { background-image: url('waterproofing-overview-bg.jpg'); }
 
 h1 { font-size: 45px; color: #00a651; margin-bottom: 20px; font-weight: bold; }
