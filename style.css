@@ -16,10 +16,9 @@ body { padding-top: 80px; }
 nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
 
 /* ============================================================ */
-/* 2. HERO & BACKGROUND LOGIC (ALL DEVICES) */
+/* 2. HERO & BACKGROUND SECTIONS */
 /* ============================================================ */
-.home-main, .hero-section, .services-bg, .pu-overview-bg, 
-.company-bg, .mission-bg, .chooseus-bg, .contact-bg {
+.hero-section, [class*="-bg"] {
     min-height: 80vh;
     display: flex !important;
     justify-content: center;
@@ -31,7 +30,7 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     background-repeat: no-repeat !important;
 }
 
-.home-main::before, .hero-section::before, [class*="-bg"]::before {
+.hero-section::before {
     content: ""; position: absolute; width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 0;
 }
@@ -44,13 +43,23 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 .hero-content p { font-size: 20px; color: white !important; }
 
 /* ============================================================ */
-/* 3. ABOUT PAGE: MISSION & VISION (NO BOXES) */
+/* 3. ENGAGING OVERVIEW CARD (GLASS EFFECT) */
 /* ============================================================ */
-.text-heading { margin-top: 40px; font-size: 32px; color: #00a651 !important; font-weight: bold; }
-.text-body { color: white !important; font-size: 18px !important; margin-top: 10px; margin-bottom: 10px; }
+.overview-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 750px;
+    margin: 20px auto;
+}
+
+.overview-text { font-size: 20px !important; color: #ffffff !important; margin-top: 15px; }
 
 /* ============================================================ */
-/* 4. SERVICE LIST BARS (THE FIX) */
+/* 4. SERVICE LIST BARS (FOR SERVICES.HTML) */
 /* ============================================================ */
 .services-list-bar {
     display: block !important;
@@ -67,49 +76,41 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     text-align: left !important;
     transition: 0.3s;
 }
-
 .services-list-bar:hover { background-color: #ffffff !important; transform: scale(1.02); }
 
 /* ============================================================ */
-/* 5. BACKGROUND IMAGES */
+/* 5. MISSION & VISION TEXT STYLES (NO BOXES) */
 /* ============================================================ */
-.home-main { background-image: url('home-bg.jpg') !important; }
+.text-heading { margin-top: 40px; font-size: 32px; color: #00a651 !important; font-weight: bold; }
+.text-body { color: white !important; font-size: 18px !important; margin: 10px 0; }
+
+/* ============================================================ */
+/* 6. BACKGROUND MAPPING */
+/* ============================================================ */
+.home-bg { background-image: url('home-bg.jpg') !important; }
 .services-bg { background-image: url('services-bg.jpg') !important; }
 .company-bg { background-image: url('company-bg.jpg') !important; }
 .mission-bg { background-image: url('mission-bg.jpg') !important; }
-.chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
 .contact-bg { background-image: url('contact-bg.jpg') !important; }
+.pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
 
 /* ============================================================ */
-/* 6. WHY CHOOSE US LIST */
-/* ============================================================ */
-.chooseus-bg ul { list-style: none; padding: 0; max-width: 700px; margin: 0 auto; }
-.chooseus-bg ul li {
-    background-color: rgba(224, 242, 233, 0.95);
-    margin: 12px 0; padding: 18px 25px; border-radius: 5px;
-    font-weight: bold; color: #004d00; text-align: left;
-    border-left: 10px solid #00a651;
-}
-
-/* ============================================================ */
-/* 7. CONTACT INFO BOXES */
+/* 7. CONTACT & BUTTONS */
 /* ============================================================ */
 .contact-info-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
 .contact-item {
     background-color: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 8px;
     min-width: 250px; color: #004d00; border-bottom: 5px solid #00a651;
 }
-
 .button {
     display: inline-block !important; background-color: #00a651 !important;
     color: white !important; padding: 15px 35px !important; border-radius: 5px !important;
     text-decoration: none !important; font-weight: bold !important; margin-top: 20px;
 }
-
 footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
 
 /* ============================================================ */
-/* 8. MOBILE RESPONSIVENESS */
+/* 8. MOBILE RESPONSIVE */
 /* ============================================================ */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
@@ -117,7 +118,6 @@ footer { text-align: center; padding: 30px; background-color: #00a651; color: wh
     nav a { margin: 0 10px; font-size: 14px; }
     body { padding-top: 130px; }
     .hero-content h1 { font-size: 28px !important; }
-    .hero-section, .home-main { min-height: 450px !important; }
-    .contact-info-container { flex-direction: column; align-items: center; }
-    .contact-item, .services-list-bar { width: 90%; }
+    .hero-section { min-height: 450px !important; }
+    .contact-item, .services-list-bar, .overview-card { width: 90%; }
 }
