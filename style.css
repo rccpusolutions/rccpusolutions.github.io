@@ -1,22 +1,49 @@
 /* ============================================================ */
 /* 1. RESET & GLOBAL STYLES */
 /* ============================================================ */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: Arial, sans-serif; line-height: 1.6; background-color: #f4f4f4; }
-
-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 20px; background-color: #ffffff; border-bottom: 2px solid #00a651;
-    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* ============================================================ */
+/* 2. FIXED HEADER & NAV (LOCKED) */
+/* ============================================================ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #00a651;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
+}
+
 body { padding-top: 80px; }
+
 .header-left { display: flex; align-items: center; }
 .header-left img { height: 50px; margin-right: 10px; }
 .company-name { font-size: 24px; font-weight: bold; color: #004d00; }
-nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
+
+nav a {
+    color: #00a651 !important;
+    text-decoration: none !important;
+    margin-left: 20px;
+    font-weight: bold;
+}
 
 /* ============================================================ */
-/* 2. HERO & BACKGROUND LOGIC (ALL DEVICES) */
+/* 3. HERO & BACKGROUND LOGIC (ALL DEVICES) */
 /* ============================================================ */
 .home-main, .hero-section, .services-bg, .pu-overview-bg, 
 .company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
@@ -36,20 +63,65 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 }
 
 /* Dark Overlays */
-.home-main::before, .hero-section::before, .services-bg::before, [class*="-bg"]::before {
-    content: ""; position: absolute; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 0;
+.home-main::before, .hero-section::before, .services-bg::before, 
+[class*="-bg"]::before {
+    content: "";
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    top: 0; left: 0; z-index: 0;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; width: 100%; }
-.hero-content h1 { font-size: 45px; margin-bottom: 20px; color: #00a651; font-weight: bold; }
-.hero-content p { font-size: 20px; margin-bottom: 30px; color: white !important; }
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 20px;
+    width: 100%;
+}
 
-/* BRANDING COLOR FIX */
-.green-text { color: #00a651 !important; font-weight: bold !important; }
+/* BRANDING COLORS */
+.green-text {
+    color: #00a651 !important;
+    font-weight: bold !important;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #00a651;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: white !important;
+}
 
 /* ============================================================ */
-/* 3. BACKGROUND IMAGE MAPPING */
+/* 4. MISSION & VISION SIMPLIFIED (NO BOXES) */
+/* ============================================================ */
+.combined-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-heading {
+    margin-top: 40px; /* Space sa pagitan ng Mission at Vision */
+    font-size: 32px;
+}
+
+.text-body {
+    color: white !important;
+    font-size: 18px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ============================================================ */
+/* 5. BACKGROUND IMAGE MAPPING */
 /* ============================================================ */
 .home-main { background-image: url('home-bg.jpg') !important; }
 .services-bg { background-image: url('services-bg.jpg') !important; }
@@ -69,48 +141,87 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 .contact-bg { background-image: url('contact-bg.jpg') !important; }
 
 /* ============================================================ */
-/* 4. ABOUT PAGE: MISSION, VISION, WHY CHOOSE US */
+/* 6. WHY CHOOSE US (LIST BARS) */
 /* ============================================================ */
-.mission-vision-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
-.mv-box {
-    background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 10px;
-    flex: 1; max-width: 450px; border-top: 8px solid #00a651; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.chooseus-bg ul {
+    list-style: none !important;
+    padding: 0 !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
 }
-.mv-box p { color: #333 !important; font-size: 16px !important; margin-top: 10px; }
 
-.chooseus-bg ul { list-style: none !important; padding: 0 !important; max-width: 700px !important; margin: 0 auto !important; }
 .chooseus-bg ul li {
-    display: block !important; background-color: rgba(224, 242, 233, 0.95) !important;
-    margin: 12px 0 !important; padding: 18px 25px !important; border-radius: 5px !important;
-    font-weight: bold !important; color: #004d00 !important; text-align: left !important;
-    border-left: 10px solid #00a651 !important; font-size: 16px !important;
+    display: block !important;
+    background-color: rgba(224, 242, 233, 0.95) !important;
+    margin: 12px 0 !important; 
+    padding: 18px 25px !important; 
+    border-radius: 5px !important;
+    font-weight: bold !important; 
+    color: #004d00 !important; 
+    text-align: left !important;
+    border-left: 10px solid #00a651 !important;
+    font-size: 16px !important;
 }
 
 /* ============================================================ */
-/* 5. CONTACT INFO & BUTTONS */
+/* 7. CONTACT INFO BOXES */
 /* ============================================================ */
-.contact-info-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+.contact-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
 .contact-item {
-    background-color: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 8px;
-    min-width: 250px; color: #004d00; border-bottom: 5px solid #00a651; z-index: 1;
-}
-.button {
-    display: inline-block !important; background-color: #00a651 !important;
-    color: white !important; padding: 15px 35px !important; border-radius: 5px !important;
-    text-decoration: none !important; font-weight: bold !important;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 250px;
+    color: #004d00;
+    font-size: 16px;
+    border-bottom: 5px solid #00a651;
 }
 
 /* ============================================================ */
-/* 6. MOBILE RESPONSIVENESS */
+/* 8. BUTTONS & FOOTER */
 /* ============================================================ */
-footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
+.button {
+    display: inline-block !important;
+    background-color: #00a651 !important;
+    color: white !important;
+    padding: 15px 35px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #00a651;
+    color: white;
+}
+
+/* ============================================================ */
+/* 9. MOBILE RESPONSIVENESS */
+/* ============================================================ */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
     nav { margin-top: 10px; }
     nav a { margin: 0 10px; font-size: 14px; }
     body { padding-top: 130px; }
+    
     .hero-content h1 { font-size: 28px !important; }
-    .hero-section, .home-main, [class*="-bg"] { min-height: 400px !important; background-attachment: scroll !important; }
-    .mission-vision-container, .contact-info-container { flex-direction: column; align-items: center; }
-    .mv-box, .contact-item { width: 90%; }
+    .hero-content p, .text-body { font-size: 16px !important; }
+    .text-heading { font-size: 24px !important; }
+
+    .hero-section, .home-main, [class*="-bg"] {
+        min-height: 400px !important;
+        background-attachment: scroll !important;
+    }
+
+    .contact-info-container { flex-direction: column; align-items: center; }
+    .contact-item { width: 90%; }
 }
