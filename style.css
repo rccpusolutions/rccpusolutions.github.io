@@ -1,3 +1,4 @@
+/* GENERAL RESET */
 * { 
     margin: 0; 
     padding: 0; 
@@ -10,6 +11,7 @@ body, html {
     line-height: 1.6; 
 }
 
+/* HEADER STYLING */
 header {
     display: flex; 
     justify-content: space-between; 
@@ -51,7 +53,7 @@ nav a {
     font-weight: bold; 
 }
 
-/* Hero Section para sa Background at Centering */
+/* CORE HERO SECTION (Scroll by Scroll) */
 .hero-section {
     min-height: 100vh;
     display: flex; 
@@ -61,11 +63,8 @@ nav a {
     position: relative; 
     background-size: cover; 
     background-position: center;
-}
-
-/* Idagdag ang Dark Overlay para lumutang ang text */
-.home-main {
-    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg');
+    background-attachment: fixed; /* Optional: adds a nice parallax effect */
+    padding: 100px 20px;
 }
 
 .hero-content { 
@@ -76,6 +75,24 @@ nav a {
     width: 100%; 
 }
 
+/* BACKGROUND IMAGES WITH DARK OVERLAYS */
+.home-main {
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg');
+}
+
+.company-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('company-bg.jpg');
+}
+
+.mission-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mission-bg.jpg');
+}
+
+.chooseus-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('chooseus-bg.jpg');
+}
+
+/* TYPOGRAPHY */
 h1 { 
     font-size: 45px; 
     color: #00a651; 
@@ -89,6 +106,7 @@ p {
     margin-bottom: 20px; 
 }
 
+/* BUTTON STYLING */
 .button {
     display: inline-block;
     background-color: #00a651;
@@ -98,13 +116,9 @@ p {
     font-weight: bold;
     border-radius: 5px;
     font-size: 18px;
-    transition: 0.3s ease;
 }
 
-.button:hover {
-    background-color: #007539;
-}
-
+/* FOOTER */
 footer { 
     text-align: center; 
     padding: 30px; 
@@ -112,10 +126,9 @@ footer {
     color: white; 
 }
 
-/* Simple Mobile Fix */
+/* MOBILE FIX */
 @media (max-width: 768px) {
     h1 { font-size: 32px; }
     p { font-size: 18px; }
-    .header-left { margin-bottom: 10px; }
-    header { flex-direction: column; height: auto; }
+    .hero-section { background-attachment: scroll; } /* Mas smooth sa mobile */
 }
