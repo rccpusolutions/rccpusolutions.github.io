@@ -1,8 +1,8 @@
 /* 1. GENERAL RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: 'Roboto', sans-serif; line-height: 1.6; }
+body, html { height: 100%; font-family: 'Roboto', sans-serif; }
 
-/* 2. FIXED HEADER (White background with green bottom border) */
+/* 2. HEADER */
 header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 5%; background-color: #ffffff; border-bottom: 4px solid #00a651;
@@ -11,45 +11,52 @@ header {
 .header-left { display: flex; align-items: center; }
 .header-left img { height: 50px; margin-right: 15px; }
 .company-name { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #004d00; }
-nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: 700; font-size: 14px; text-transform: uppercase; }
+nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; font-weight: 700; font-size: 14px; text-transform: uppercase; }
 
 body { padding-top: 85px; }
 
-/* 3. ABOUT US SECTIONS (Default Style with Backgrounds) */
+/* 3. ABOUT HERO (Ka-size ng Home Page) */
 .about-hero {
-    min-height: 60vh; width: 100%; display: flex; align-items: center; justify-content: center;
-    background-size: cover; background-position: center; position: relative;
+    height: 100vh; /* Ito ang nagpapalaki sa kanya gaya ng home page */
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; /* Optional: para maganda ang scroll effect */
 }
 
-/* Background image assignments per section */
-.company-bg { background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('about-bg.jpg'); }
-.mission-bg { background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('mission-bg.jpg'); }
-.why-bg { background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('why-bg.jpg'); }
+/* Background Images per Section */
+#company-section { 
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('about-bg.jpg'); 
+}
+#mission-section { 
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('mission-bg.jpg'); 
+}
+#why-section { 
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('why-bg.jpg'); 
+}
 
-.about-overlay { max-width: 900px; padding: 40px 20px; text-align: center; color: white; }
+.about-overlay { max-width: 900px; padding: 20px; text-align: center; color: white; }
 
-/* Green Titles from Original Design */
 .about-title {
-    font-family: 'Montserrat', sans-serif; font-size: 40px; color: #00a651;
-    font-weight: 800; text-transform: uppercase; margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif; font-size: 45px; color: #00a651;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 20px;
 }
-.v-space { margin-top: 40px; }
+.v-space { margin-top: 50px; }
+.about-text { font-size: 20px; font-weight: 500; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
 
-.about-text { font-size: 19px; font-weight: 400; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
-
-/* 4. FOOTER (Selyadong Green Style) */
+/* 4. FOOTER */
 .main-footer {
-    text-align: center; padding: 25px; 
+    text-align: center; padding: 30px; 
     background-color: #00a651 !important; 
     color: white !important; font-weight: bold; font-size: 14px;
-    width: 100%;
 }
 
 /* 5. MOBILE FIX */
 @media (max-width: 768px) {
-    .about-title { font-size: 28px !important; }
-    .about-text { font-size: 16px !important; }
-    header { height: auto; padding: 10px; flex-direction: column; }
-    nav { margin-top: 10px; }
-    nav a { margin: 0 8px; font-size: 12px; }
+    .about-hero { height: auto; min-height: 100vh; padding: 100px 20px; }
+    .about-title { font-size: 32px !important; }
+    .about-text { font-size: 17px !important; }
 }
