@@ -1,3 +1,6 @@
+/* =========================================
+   1. GENERAL RESET & BASE STYLES
+   ========================================= */
 * { 
     margin: 0; 
     padding: 0; 
@@ -7,30 +10,65 @@
 body, html { 
     height: 100%; 
     font-family: Arial, sans-serif; 
+    line-height: 1.6; 
     scroll-behavior: smooth;
 }
 
+/* =========================================
+   2. HEADER & NAVIGATION (Fixed)
+   ========================================= */
 header {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    padding: 15px 20px; 
+    padding: 15px 5%; 
     background-color: #ffffff; 
-    border-bottom: 2px solid #00a651;
+    border-bottom: 3px solid #00a651;
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%; 
     z-index: 1000;
+    height: 80px;
 }
 
-body { padding-top: 80px; }
-.header-left { display: flex; align-items: center; }
-.header-left img { height: 50px; margin-right: 10px; }
-.company-name { font-size: 24px; font-weight: bold; color: #004d00; }
-nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
+.header-left { 
+    display: flex; 
+    align-items: center; 
+}
 
-/* HERO SECTION CORE */
+.header-left img { 
+    height: 50px; 
+    margin-right: 15px; 
+}
+
+.company-name { 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #004d00; 
+}
+
+nav a { 
+    color: #00a651 !important; 
+    text-decoration: none !important; 
+    margin-left: 25px; 
+    font-weight: bold; 
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #004d00 !important;
+}
+
+/* Para hindi matakpan ng fixed header ang content */
+body { 
+    padding-top: 80px; 
+}
+
+/* =========================================
+   3. HERO SECTIONS (Reusable Layout)
+   ========================================= */
 .hero-section {
     min-height: 100vh;
     width: 100%;
@@ -42,9 +80,33 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
+    padding: 40px 20px;
 }
 
-/* BACKGROUNDS - Siguraduhin na .jpg lahat */
+.hero-content { 
+    position: relative; 
+    z-index: 1; 
+    max-width: 1000px; 
+    width: 100%; 
+}
+
+/* Global Heading & Paragraph for Hero */
+h1 { 
+    font-size: 45px; 
+    color: #00a651; 
+    margin-bottom: 20px; 
+    font-weight: bold; 
+}
+
+p { 
+    color: white !important; 
+    font-size: 24px; 
+    margin-bottom: 30px; 
+}
+
+/* =========================================
+   4. BACKGROUNDS (Home, About, Services)
+   ========================================= */
 .home-main {
     background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('home-bg.jpg');
 }
@@ -61,45 +123,103 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('chooseus-bg.jpg');
 }
 
-.hero-content { 
-    position: relative; 
-    z-index: 1; 
-    max-width: 900px; 
-    padding: 40px 20px; 
+.services-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('services-bg.jpg');
 }
 
-h1 { 
-    font-size: 45px; 
-    color: #00a651; 
-    margin-bottom: 20px; 
-    font-weight: bold; 
+/* =========================================
+   5. SERVICES PAGE (Aesthetic Grid)
+   ========================================= */
+.services-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
-p { 
-    color: white !important; 
-    font-size: 24px; 
-    margin-bottom: 20px; 
+.services-list-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #004d00;
+    padding: 30px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    border-left: 8px solid transparent;
 }
 
+.services-list-bar:hover {
+    background-color: #ffffff;
+    transform: translateY(-8px);
+    border-left: 8px solid #00a651;
+}
+
+.services-list-bar span.arrow {
+    color: #00a651;
+    font-size: 22px;
+}
+
+/* =========================================
+   6. BUTTONS & FOOTER
+   ========================================= */
 .button {
     display: inline-block;
     background-color: #00a651;
     color: white;
-    padding: 15px 35px;
+    padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     font-size: 18px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #008c44;
+    transform: scale(1.05);
 }
 
 footer { 
     text-align: center; 
-    padding: 30px; 
+    padding: 40px 20px; 
     background-color: #00a651; 
     color: white; 
+}
+
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 992px) {
+    .services-list-container {
+        grid-template-columns: 1fr; /* Stacked sa tablet/mobile */
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 768px) {
     h1 { font-size: 32px; }
     p { font-size: 18px; }
+    
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .header-left { margin-bottom: 10px; }
+    nav a { margin: 5px 10px; font-size: 14px; }
+    
+    .hero-section {
+        padding: 120px 20px 60px;
+    }
 }
