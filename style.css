@@ -15,42 +15,51 @@ nav a { color: #00a651 !important; text-decoration: none !important; margin-left
 
 body { padding-top: 80px; }
 
-/* 3. HERO CORE */
+/* 3. HERO CORE - Home & Contact Page Layout */
 .hero-section {
     min-height: 100vh; width: 100%; display: flex; 
     justify-content: center; align-items: center; text-align: center;
     position: relative; background-size: cover; background-position: center;
 }
 
-/* Background Images */
+/* Background Images & Dark Overlay */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('home-bg.jpg'); }
 .contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
 .hero-content { position: relative; z-index: 10; max-width: 900px; width: 100%; padding: 20px; }
 
-/* HOMEPAGE SPECIFIC STYLING (Para hindi na mag-iba) */
-.home-title { 
-    font-size: 65px; color: #00a651; margin-bottom: 20px; 
-    font-weight: bold; text-transform: uppercase;
-}
-.home-subtitle { color: white !important; font-size: 24px; margin-bottom: 35px; }
+/* Global H1 for Contact/About pages */
+h1 { font-size: 50px; color: #00a651; margin-bottom: 20px; text-transform: uppercase; }
 
-/* Ang Green Button sa Homepage */
+/* Global taglines - Mananatiling Puti */
+p { color: white !important; font-size: 20px; margin-bottom: 30px; }
+
+/* 4. HOMEPAGE SPECIFIC (PINAKABINAGO: Selyado ang Title) */
+.home-title { 
+    /* Binabaan ang font-size at selyado sa isang linya */
+    font-size: 55px !important; 
+    color: #00a651 !important; 
+    margin-bottom: 20px; 
+    font-weight: bold !important; 
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Para lalong malinaw ang puting title sa contact page */
+    
+    /* Ito ang sikreto para pilitin sa isang linya */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.home-subtitle { color: white !important; font-size: 22px !important; margin-bottom: 35px; }
+
+/* Ang Green Button sa Homepage - Na-check at Okay na */
 .home-btn {
-    display: inline-block;
-    background-color: #00a651;
-    color: white !important;
-    padding: 18px 45px;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: 0.3s ease;
+    display: inline-block; background-color: #00a651; color: white !important;
+    padding: 16px 40px; font-size: 20px; font-weight: bold; text-decoration: none;
+    border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s ease;
 }
 .home-btn:hover { background-color: #008c44; transform: scale(1.05); }
 
-/* 4. CONTACT PAGE GRID (Para sa contact.html) */
+/* 5. CONTACT PAGE GRID (Naka-selyo rin para hindi masira) */
 .contact-grid-wrapper {
     display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px;
 }
@@ -63,24 +72,30 @@ body { padding-top: 80px; }
 .grid-two-cols { display: flex; width: 100%; max-width: 600px; gap: 15px; }
 .grid-short-bar { width: calc(50% - 7.5px); padding: 15px 20px; justify-content: center; }
 
-/* Icon Colors & Labels */
+/* Icon Colors & Labels sa Contact Page */
 .contact-icon-inline { font-size: 24px; margin-right: 10px; }
 .contact-detail-inline { color: #333 !important; font-size: 18px !important; font-weight: bold; }
 .email-icon { color: #D44638; font-size: 22px; margin-right: 12px; }
 .fb-icon { color: #1877F2; font-size: 22px; margin-right: 12px; }
 .ig-icon { color: #E4405F; font-size: 22px; margin-right: 12px; }
 .contact-detail { color: #333 !important; font-size: 16px !important; text-shadow: none !important; }
+.arrow { color: #00a651; font-weight: bold; margin-left: auto; }
 .whatsapp-green-bar {
     width: 100%; max-width: 600px; background-color: #00a651; color: white !important;
-    padding: 18px 30px; justify-content: space-between; font-weight: bold; font-size: 18px;
+    padding: 18px 30px; justify-content: space-between; font-weight: bold; font-size: 18px; margin-top: 10px;
 }
+.clickable-grid-bar:hover { transform: translateY(-3px); background-color: #ffffff; }
 
-/* 5. FOOTER */
+/* 6. FOOTER */
 footer { text-align: center; padding: 40px; background-color: #00a651; color: white; }
 
-/* 6. MOBILE RESPONSIVE */
+/* 7. MOBILE RESPONSIVE (Pati ito na-fix) */
 @media (max-width: 768px) {
-    .home-title { font-size: 35px; }
+    .home-title { 
+        font-size: 28px !important; /* Binabaan para kumasya sa mobile screen */
+        white-space: normal; /* Balik sa normal wrap sa mobile */
+    }
+    p, .home-subtitle { font-size: 16px !important; }
     .grid-two-cols { flex-direction: column; gap: 10px; }
     .grid-short-bar, .grid-long-bar, .whatsapp-green-bar { width: 100%; max-width: 95%; }
 }
