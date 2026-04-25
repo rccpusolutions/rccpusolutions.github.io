@@ -32,7 +32,6 @@ header {
 .header-left img { height: 50px; margin-right: 15px; }
 .company-name { font-size: 24px; font-weight: bold; color: #004d00; }
 nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 25px; font-weight: bold; font-size: 16px; transition: 0.3s; }
-nav a:hover { color: #004d00 !important; }
 
 body { padding-top: 80px; }
 
@@ -78,7 +77,7 @@ h1 {
 .services-vertical-list {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Dinagdagan ang spacing sa pagitan */
+    gap: 25px; 
     margin-bottom: 50px;
     align-items: center;
 }
@@ -89,20 +88,20 @@ h1 {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.98);
     color: #004d00;
-    padding: 18px 25px; /* Binawasan ang padding para lumiit */
+    padding: 18px 25px; 
     text-decoration: none;
     font-weight: 600;
-    font-size: 18px; /* Tamang size lang para sa mata */
+    font-size: 18px; 
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Mas malambot na shadow */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
     transition: all 0.3s ease;
     border-left: 6px solid transparent;
     width: 100%;
-    max-width: 520px; /* Mas makitid para magmukhang aesthetic */
+    max-width: 520px; 
 }
 
 .services-list-bar:hover {
-    transform: translateY(-3px); /* Imbes na pakanan, pataas para mas "floaty" */
+    transform: translateY(-3px); 
     border-left: 6px solid #00a651;
     background-color: #ffffff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
@@ -122,14 +121,6 @@ h1 {
     font-weight: bold;
     border-radius: 5px;
     font-size: 17px;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.button:hover {
-    background-color: #008c44;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 footer { 
@@ -137,13 +128,10 @@ footer {
     padding: 40px; 
     background-color: #00a651; 
     color: white; 
-    font-size: 14px;
 }
 
 /* 7. MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     h1 { font-size: 30px; }
     .services-list-bar { font-size: 16px; padding: 15px 20px; max-width: 90%; }
-    header { height: auto; padding: 10px; }
-    nav a { margin: 5px 10px; font-size: 13px; }
 }
