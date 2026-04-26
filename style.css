@@ -59,7 +59,7 @@ nav a {
 
 nav a:hover { color: #004d00 !important; }
 
-/* 3. HERO SECTION - Full Screen Layout */
+/* 3. HERO SECTION - Full Screen Layout (Gaya ng About Us) */
 body { padding-top: 80px; }
 
 .hero-section {
@@ -98,20 +98,25 @@ p {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* 4. MAIN BACKGROUNDS */
+/* 4. MAIN PAGE BACKGROUNDS */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-bg.jpg'); }
 .company-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('company-bg.jpg'); }
 .mission-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('mission-bg.jpg'); }
 .chooseus-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('chooseus-bg.jpg'); }
 .services-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('services-bg.jpg'); }
 
-/* 5. PU FLOORING SUB-SECTION BACKGROUNDS (NEW UPDATE) */
+/* 5. PU FLOORING BACKGROUNDS */
 .pu-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pu-overview-bg.jpg'); }
 .coldstorage-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('coldstorage-bg.jpg'); }
 .hatchery-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hatchery-bg.jpg'); }
 .dressingplant-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('dressingplant-bg.jpg'); }
 
-/* 6. SERVICES LIST (Click to Action Bars) */
+/* 6. EPOXY FLOORING BACKGROUNDS (NEW) */
+.epoxy-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-overview-bg.jpg'); }
+.epoxy-mortar-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-mortar-bg.jpg'); }
+.epoxy-paint-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-paint-bg.jpg'); }
+
+/* 7. SERVICES LIST STYLE */
 .services-vertical-list {
     display: flex;
     flex-direction: column;
@@ -142,7 +147,7 @@ p {
     background-color: #ffffff;
 }
 
-/* 7. BUTTONS & FOOTER */
+/* 8. BUTTONS & FOOTER */
 .button {
     display: inline-block;
     background-color: #00a651;
@@ -161,31 +166,17 @@ footer {
     color: white; 
 }
 
-/* 8. MOBILE RESPONSIVENESS */
+/* 9. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
         padding: 15px 5%;
     }
-
-    .header-left {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
+    .header-left { width: 100%; margin-bottom: 10px; }
     .company-name { font-size: 20px; }
-
-    nav {
-        width: 100%;
-        justify-content: flex-end;
-    }
-
-    nav a {
-        margin-left: 15px;
-        font-size: 14px;
-    }
-
+    nav { width: 100%; justify-content: flex-end; }
+    nav a { margin-left: 15px; font-size: 14px; }
     h1 { font-size: 32px; }
     p { font-size: 18px; }
 }
