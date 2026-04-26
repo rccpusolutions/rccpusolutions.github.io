@@ -59,7 +59,7 @@ nav a {
 
 nav a:hover { color: #004d00 !important; }
 
-/* 3. HERO SECTION - Full Screen Layout (Gaya ng About Us) */
+/* 3. HERO SECTION - Full Screen Layout */
 body { padding-top: 80px; }
 
 .hero-section {
@@ -111,12 +111,16 @@ p {
 .hatchery-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hatchery-bg.jpg'); }
 .dressingplant-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('dressingplant-bg.jpg'); }
 
-/* 6. EPOXY FLOORING BACKGROUNDS (NEW) */
+/* 6. EPOXY FLOORING BACKGROUNDS */
 .epoxy-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-overview-bg.jpg'); }
 .epoxy-mortar-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-mortar-bg.jpg'); }
 .epoxy-paint-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-paint-bg.jpg'); }
 
-/* 7. SERVICES LIST STYLE */
+/* 7. WATERPROOFING BACKGROUNDS */
+.waterproofing-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('waterproofing-overview-bg.jpg'); }
+.roofdeck-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('roofdeck-bg.jpg'); }
+
+/* 8. SERVICES LIST STYLE */
 .services-vertical-list {
     display: flex;
     flex-direction: column;
@@ -147,7 +151,7 @@ p {
     background-color: #ffffff;
 }
 
-/* 8. BUTTONS & FOOTER */
+/* 9. BUTTONS & FOOTER */
 .button {
     display: inline-block;
     background-color: #00a651;
@@ -166,7 +170,7 @@ footer {
     color: white; 
 }
 
-/* 9. MOBILE RESPONSIVENESS */
+/* 10. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
