@@ -91,7 +91,6 @@ body {
     max-width: 1100px;
 }
 
-/* Global Titles & Text */
 h1 { 
     font-size: 55px; 
     color: #00a651; 
@@ -107,13 +106,14 @@ p {
 }
 
 /* ==========================================================================
-   4. BACKGROUNDS (Main & Sub-pages)
+   4. BACKGROUNDS
    ========================================================================== */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-bg.jpg'); }
 .company-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('company-bg.jpg'); }
 .mission-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('mission-bg.jpg'); }
 .chooseus-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('chooseus-bg.jpg'); }
 .services-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('services-bg.jpg'); }
+.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
 /* Sub-pages Backgrounds */
 .pu-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pu-overview-bg.jpg'); }
@@ -127,7 +127,7 @@ p {
 .roofdeck-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('roofdeck-bg.jpg'); }
 
 /* ==========================================================================
-   5. SERVICES LAYOUT
+   5. SERVICES & BUTTONS (Fixed Centering)
    ========================================================================== */
 .services-vertical-list {
     display: flex; flex-direction: column; gap: 20px; align-items: center; margin: 40px 0;
@@ -140,24 +140,34 @@ p {
     border-radius: 8px; width: 100%; max-width: 500px; transition: 0.3s;
 }
 
-.ready-to-start {
-    color: white !important; font-size: 24px; margin: 30px 0 15px;
+/* Updated centering logic for Back to Services button */
+.btn-back-services {
+    display: table; /* Centers the element based on its content */
+    margin: 40px auto 0 auto; /* auto left/right makes it center */
+    background-color: #00a651; 
+    color: white !important;
+    padding: 12px 30px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    transition: 0.3s;
+}
+
+.button {
+    display: inline-block; background-color: #00a651; color: white !important;
+    padding: 15px 35px; text-decoration: none; font-weight: bold;
+    border-radius: 5px; transition: 0.3s;
 }
 
 /* ==========================================================================
-   6. CONTACT PAGE - Layout and Spacing Fix
+   6. CONTACT PAGE LAYOUT (Fixed Spacing)
    ========================================================================== */
-.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
-
-/* ADJUSTMENT: Dinagdagan ang spacing sa pagitan ng tagline at ng contact cards */
 .contact-tagline {
-    margin-bottom: 50px !important; 
+    margin-bottom: 50px !important; /* Spacing below tagline */
 }
 
 .contact-layout-grid { display: flex; flex-direction: column; gap: 15px; }
-
 .contact-row { display: flex; justify-content: center; gap: 15px; width: 100%; }
-
 .row-quad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 
 .contact-item-card {
@@ -172,48 +182,14 @@ p {
 }
 
 .whatsapp-highlight { background-color: #00a651; border: none; }
-
 .contact-icon-main { font-size: 30px; color: #00a651; margin-bottom: 10px; }
 .whatsapp-highlight .contact-icon-main { color: white; margin-bottom: 0; }
-
 .contact-info-text h3 { color: #00a651; font-size: 14px; margin-bottom: 5px; }
 .whatsapp-highlight .contact-info-text h3 { color: white; font-size: 18px; margin-bottom: 0; }
-
-.contact-info-text p { 
-    color: white !important; font-size: 14px !important; 
-    margin-bottom: 0 !important; text-shadow: none !important; 
-}
+.contact-info-text p { color: white !important; font-size: 14px !important; margin-bottom: 0 !important; text-shadow: none !important; }
 
 /* ==========================================================================
-   7. BUTTONS & BACK LINKS
-   ========================================================================== */
-.button {
-    display: inline-block; background-color: #00a651; color: white !important;
-    padding: 15px 35px; text-decoration: none; font-weight: bold;
-    border-radius: 5px; transition: 0.3s;
-}
-
-/* ADJUSTMENT: Siniguro na ang Back to Services ay laging nasa gitna (Centered) */
-.btn-back-services-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-}
-
-.btn-back-services {
-    display: inline-block;
-    background-color: #00a651;
-    color: white !important;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-/* ==========================================================================
-   8. MOBILE RESPONSIVENESS
+   7. MOBILE RESPONSIVENESS
    ========================================================================== */
 @media (max-width: 900px) {
     .row-quad { grid-template-columns: 1fr 1fr; }
