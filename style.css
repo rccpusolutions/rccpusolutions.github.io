@@ -127,7 +127,7 @@ p {
 .roofdeck-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('roofdeck-bg.jpg'); }
 
 /* ==========================================================================
-   5. SERVICES & BUTTONS (Fixed Centering)
+   5. SERVICES & BUTTONS (Fix: Back to Services & Ready to Start)
    ========================================================================== */
 .services-vertical-list {
     display: flex; flex-direction: column; gap: 20px; align-items: center; margin: 40px 0;
@@ -140,17 +140,27 @@ p {
     border-radius: 8px; width: 100%; max-width: 500px; transition: 0.3s;
 }
 
-/* Updated centering logic for Back to Services button */
+/* Fix: Ready to start your project text color */
+.ready-to-start {
+    color: white !important; 
+    font-size: 24px; 
+    margin: 30px 0 15px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    display: block; /* Para masiguradong nasa sariling linya */
+}
+
+/* Fix: Centering Back to Services without changing HTML */
 .btn-back-services {
-    display: table; /* Centers the element based on its content */
-    margin: 40px auto 0 auto; /* auto left/right makes it center */
+    display: table; /* Centers the button content-wise */
+    margin: 60px auto 60px auto; /* 60px space sa itaas at ibaba (naka-layo sa footer) */
     background-color: #00a651; 
     color: white !important;
-    padding: 12px 30px; 
+    padding: 12px 35px; 
     text-decoration: none; 
     font-weight: bold; 
     border-radius: 5px; 
     transition: 0.3s;
+    text-align: center;
 }
 
 .button {
@@ -160,10 +170,10 @@ p {
 }
 
 /* ==========================================================================
-   6. CONTACT PAGE LAYOUT (Fixed Spacing)
+   6. CONTACT PAGE LAYOUT
    ========================================================================== */
 .contact-tagline {
-    margin-bottom: 50px !important; /* Spacing below tagline */
+    margin-bottom: 50px !important; 
 }
 
 .contact-layout-grid { display: flex; flex-direction: column; gap: 15px; }
@@ -200,4 +210,5 @@ p {
     h1 { font-size: 32px; }
     p { font-size: 18px; }
     .location-highlight, .whatsapp-highlight { flex-direction: column; }
+    .btn-back-services { margin: 40px auto; }
 }
