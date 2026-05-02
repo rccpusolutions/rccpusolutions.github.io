@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking | RCC PU Solutions</title>
-    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
         .booking-wrapper { padding: 60px 20px; min-height: 80vh; display: flex; justify-content: center; align-items: center; }
@@ -23,6 +22,7 @@
     </style>
 </head>
 <body>
+
 <header>
     <div class="header-left">
         <img src="logo.png" alt="Logo">
@@ -36,16 +36,27 @@
         <a href="contact.html">Contact Us</a>
     </nav>
 </header>
+
 <section class="hero-section contact-bg booking-wrapper">
     <div class="form-card">
         <form action="https://formspree.io/f/xjglkenr" method="POST" id="bookingForm">
+            
+            <!-- CONTACT DETAILS SECTION -->
             <div class="form-step active" id="step1">
                 <h2>Contact Details</h2>
-                <div class="input-group"><input type="text" name="Full Name" placeholder="Full Name" required></div>
-                <div class="input-group"><input type="tel" name="Mobile Number" placeholder="Mobile Number" required></div>
-                <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
+                <div class="input-group">
+                    <input type="text" name="Full Name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="Email" placeholder="Email Address" required>
+                </div>
                 <button type="button" class="btn-next" onclick="nextStep()">Next: Project Details</button>
             </div>
+
+            <!-- PROJECT DETAILS SECTION -->
             <div class="form-step" id="step2">
                 <h2>Project Details</h2>
                 <div class="input-group">
@@ -57,6 +68,7 @@
                         <option value="Both">Both (Estimated + Ocular)</option>
                     </select>
                 </div>
+
                 <div class="input-group hidden-field" id="serviceTypeDiv">
                     <label>Service Type</label>
                     <select name="Service Type">
@@ -65,9 +77,20 @@
                         <option value="Waterproofing">Waterproofing</option>
                     </select>
                 </div>
-                <div class="input-group hidden-field" id="sqmDiv"><input type="text" name="Estimated SQM" placeholder="Estimated SQM (e.g. 100)"></div>
-                <div class="input-group hidden-field" id="locationDiv"><input type="text" name="Location" placeholder="Exact Location / Address"></div>
-                <div class="input-group hidden-field" id="dateDiv"><label>Preferred Inspection Date</label><input type="date" name="Preferred Date"></div>
+
+                <div class="input-group hidden-field" id="sqmDiv">
+                    <input type="text" name="Estimated SQM" placeholder="Estimated SQM (e.g. 100)">
+                </div>
+
+                <div class="input-group hidden-field" id="locationDiv">
+                    <input type="text" name="Location" placeholder="Exact Location / Address">
+                </div>
+
+                <div class="input-group hidden-field" id="dateDiv">
+                    <label>Preferred Inspection Date</label>
+                    <input type="date" name="Preferred Date">
+                </div>
+
                 <div class="btn-container">
                     <button type="button" class="btn-back" onclick="prevStep()">Back</button>
                     <button type="submit" class="btn-submit">Submit Request</button>
@@ -76,23 +99,59 @@
         </form>
     </div>
 </section>
-<footer>&copy; 2026 RCC PU Solutions. All rights reserved.</footer>
+
+<footer>
+    &copy; 2026 RCC PU Solutions. All rights reserved.
+</footer>
+
 <script>
     function nextStep() {
         const inputs = document.querySelectorAll('#step1 input');
         let valid = true;
-        inputs.forEach(input => { if(!input.value) { valid = false; input.style.borderColor = "red"; } else { input.style.borderColor = "#ccc"; } });
-        if(valid) { document.getElementById('step1').classList.remove('active'); document.getElementById('step2').classList.add('active'); }
+        inputs.forEach(input => {
+            if(!input.value) {
+                valid = false;
+                input.style.borderColor = "red";
+            } else {
+                input.style.borderColor = "#ccc";
+            }
+        });
+
+        if(valid) {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+        }
     }
-    function prevStep() { document.getElementById('step2').classList.remove('active'); document.getElementById('step1').classList.add('active'); }
+
+    function prevStep() {
+        document.getElementById('step2').classList.remove('active');
+        document.getElementById('step1').classList.add('active');
+    }
+
     function toggleFormFields() {
         const choice = document.getElementById('requestChoice').value;
-        const fields = { service: document.getElementById('serviceTypeDiv'), sqm: document.getElementById('sqmDiv'), loc: document.getElementById('locationDiv'), date: document.getElementById('dateDiv') };
+        const fields = {
+            service: document.getElementById('serviceTypeDiv'),
+            sqm: document.getElementById('sqmDiv'),
+            loc: document.getElementById('locationDiv'),
+            date: document.getElementById('dateDiv')
+        };
+
         Object.values(fields).forEach(f => f.classList.add('hidden-field'));
-        if (choice === "Quotation Only") { fields.service.classList.remove('hidden-field'); fields.sqm.classList.remove('hidden-field'); fields.loc.classList.remove('hidden-field'); }
-        else if (choice === "Ocular Only") { fields.service.classList.remove('hidden-field'); fields.loc.classList.remove('hidden-field'); fields.date.classList.remove('hidden-field'); }
-        else if (choice === "Both") { Object.values(fields).forEach(f => f.classList.remove('hidden-field')); }
+
+        if (choice === "Quotation Only") {
+            fields.service.classList.remove('hidden-field');
+            fields.sqm.classList.remove('hidden-field');
+            fields.loc.classList.remove('hidden-field');
+        } else if (choice === "Ocular Only") {
+            fields.service.classList.remove('hidden-field');
+            fields.loc.classList.remove('hidden-field');
+            fields.date.classList.remove('hidden-field');
+        } else if (choice === "Both") {
+            Object.values(fields).forEach(f => f.classList.remove('hidden-field'));
+        }
     }
 </script>
+
 </body>
 </html>
