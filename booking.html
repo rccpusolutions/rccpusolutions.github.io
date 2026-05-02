@@ -6,26 +6,20 @@
     <title>Get a Quote / Book Ocular | RCC PU Solutions</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Karagdagang styles para sa Form Card na babagay sa theme mo */
-        .form-card { 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 30px; 
-            border-radius: 8px; 
-            width: 100%; 
-            max-width: 500px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
+        /* Custom styles para sa booking form para mag-match sa theme mo */
+        .booking-wrapper { padding: 60px 20px; min-height: 80vh; display: flex; justify-content: center; align-items: center; }
+        .form-card { background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); width: 100%; max-width: 550px; color: #333; }
         .form-step { display: none; }
         .form-step.active { display: block; }
-        .form-card h2 { color: #004d00; margin-bottom: 20px; font-size: 24px; }
-        .input-group { margin-bottom: 15px; text-align: left; }
-        .input-group label { display: block; font-weight: bold; color: #004d00; margin-bottom: 5px; }
-        .form-card input, .form-card select { 
-            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; 
-        }
+        .form-card h2 { color: #00a651; margin-bottom: 20px; font-size: 1.8rem; text-align: center; text-shadow: none; }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; text-align: left; }
+        .form-card input, .form-card select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+        .btn-container { display: flex; gap: 10px; margin-top: 25px; }
+        .btn-next, .btn-submit { background: #00a651; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .btn-back { background: #6c757d; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 40%; font-weight: bold; transition: 0.3s; }
+        .btn-next:hover, .btn-submit:hover { background: #008541; transform: translateY(-2px); }
         .hidden-field { display: none; }
-        .btn-nav { width: 100%; border: none; cursor: pointer; margin-top: 10px; }
-        .btn-back { background-color: #6c757d !important; }
     </style>
 </head>
 <body>
@@ -39,71 +33,73 @@
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="services.html">Services</a>
-        <a href="booking.html" style="border-bottom: 2px solid #00a651;">Booking</a>
+        <a href="booking.html" style="color: #00a651; font-weight: bold;">Booking</a>
         <a href="contact.html">Contact Us</a>
     </nav>
 </header>
 
-<section class="hero-section contact-bg">
-    <div class="hero-content">
-        <div class="form-card" style="margin: 0 auto;">
-            <!-- Paalala: Ilagay ang iyong Formspree ID sa action link -->
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                
-                <!-- STEP 1: Contact Details -->
-                <div class="form-step active" id="step1">
-                    <h2>Step 1: Contact Details</h2>
-                    <div class="input-group">
-                        <input type="text" name="Full Name" placeholder="Full Name" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" name="Email Address" placeholder="Email Address" required>
-                    </div>
-                    <button type="button" class="button btn-nav" onclick="nextStep()">Next: Project Details</button>
+<!-- Ginamit ang 'contact-bg' class para sa consistency -->
+<section class="hero-section contact-bg booking-wrapper">
+    <div class="form-card">
+        <!-- Inilagay na ang iyong Formspree Endpoint dito -->
+        <form action="https://formspree.io/f/xjglkenr" method="POST" id="bookingForm">
+            
+            <!-- STEP 1: Contact Details -->
+            <div class="form-step active" id="step1">
+                <h2>Step 1: Contact Details</h2>
+                <div class="input-group">
+                    <input type="text" name="Full Name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="Email" placeholder="Email Address" required>
+                </div>
+                <button type="button" class="btn-next" onclick="nextStep()">Next: Project Details</button>
+            </div>
+
+            <!-- STEP 2: Selection Logic -->
+            <div class="form-step" id="step2">
+                <h2>Step 2: Project Details</h2>
+                <div class="input-group">
+                    <label>What do you need?</label>
+                    <select name="Request Type" id="requestChoice" onchange="toggleFormFields()" required>
+                        <option value="">-- Select Option --</option>
+                        <option value="Quotation Only">Get Estimated Quotation</option>
+                        <option value="Ocular Only">Schedule an Ocular Inspection</option>
+                        <option value="Both">Both (Estimated + Ocular)</option>
+                    </select>
                 </div>
 
-                <!-- STEP 2: Selection -->
-                <div class="form-step" id="step2">
-                    <h2>Step 2: Project Details</h2>
-                    <div class="input-group">
-                        <label>Service Needed</label>
-                        <select name="Request Type" id="requestChoice" onchange="updateFormFields()" required>
-                            <option value="">-- Select Option --</option>
-                            <option value="Quotation Only">Get Estimated Quotation</option>
-                            <option value="Ocular Only">Schedule an Ocular Inspection</option>
-                            <option value="Both">Both (Quotation + Ocular)</option>
-                        </select>
-                    </div>
-
-                    <div id="dynamicFields">
-                        <div class="input-group hidden-field" id="serviceTypeDiv">
-                            <label>Service Type</label>
-                            <select name="Service Type">
-                                <option value="PU Flooring">PU Flooring</option>
-                                <option value="Epoxy Coating">Epoxy Coating</option>
-                                <option value="Waterproofing">Waterproofing</option>
-                            </select>
-                        </div>
-                        <div class="input-group hidden-field" id="sqmDiv">
-                            <input type="text" name="SQM" placeholder="Estimated SQM">
-                        </div>
-                        <div class="input-group hidden-field" id="locationDiv">
-                            <input type="text" name="Location" placeholder="Exact Location / Address">
-                        </div>
-                        <div class="input-group hidden-field" id="dateDiv">
-                            <label>Preferred Ocular Date</label>
-                            <input type="date" name="Preferred Date">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="button btn-nav">Submit Request</button>
-                    <button type="button" class="button btn-nav btn-back" onclick="prevStep()">Back</button>
+                <div class="input-group hidden-field" id="serviceTypeDiv">
+                    <label>Service Type</label>
+                    <select name="Service Type">
+                        <option value="PU Flooring">PU Flooring</option>
+                        <option value="Epoxy Coating">Epoxy Coating</option>
+                        <option value="Waterproofing">Waterproofing</option>
+                    </select>
                 </div>
-            </form>
-        </div>
+
+                <div class="input-group hidden-field" id="sqmDiv">
+                    <input type="text" name="Estimated SQM" placeholder="Estimated SQM">
+                </div>
+
+                <div class="input-group hidden-field" id="locationDiv">
+                    <input type="text" name="Location" placeholder="Exact Location / Address">
+                </div>
+
+                <div class="input-group hidden-field" id="dateDiv">
+                    <label>Preferred Inspection Date</label>
+                    <input type="date" name="Preferred Date">
+                </div>
+
+                <div class="btn-container">
+                    <button type="button" class="btn-back" onclick="prevStep()">Back</button>
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -113,14 +109,27 @@
 
 <script>
     function nextStep() {
-        document.getElementById('step1').classList.remove('active');
-        document.getElementById('step2').classList.add('active');
+        // Simple check kung may laman ang Step 1 inputs
+        const inputs = document.querySelectorAll('#step1 input');
+        let valid = true;
+        inputs.forEach(input => {
+            if(!input.value) valid = false;
+        });
+
+        if(valid) {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+        } else {
+            alert("Please fill out all contact details.");
+        }
     }
+
     function prevStep() {
         document.getElementById('step2').classList.remove('active');
         document.getElementById('step1').classList.add('active');
     }
-    function updateFormFields() {
+
+    function toggleFormFields() {
         const choice = document.getElementById('requestChoice').value;
         const fields = {
             service: document.getElementById('serviceTypeDiv'),
@@ -128,14 +137,20 @@
             loc: document.getElementById('locationDiv'),
             date: document.getElementById('dateDiv')
         };
-        Object.values(fields).forEach(el => el.classList.add('hidden-field'));
-        
+
+        // Reset: Itago lahat
+        Object.values(fields).forEach(f => f.classList.add('hidden-field'));
+
         if (choice === "Quotation Only") {
-            ['service', 'sqm', 'loc'].forEach(k => fields[k].classList.remove('hidden-field'));
+            fields.service.classList.remove('hidden-field');
+            fields.sqm.classList.remove('hidden-field');
+            fields.loc.classList.remove('hidden-field');
         } else if (choice === "Ocular Only") {
-            ['service', 'loc', 'date'].forEach(k => fields[k].classList.remove('hidden-field'));
+            fields.service.classList.remove('hidden-field');
+            fields.loc.classList.remove('hidden-field');
+            fields.date.classList.remove('hidden-field');
         } else if (choice === "Both") {
-            Object.values(fields).forEach(el => el.classList.remove('hidden-field'));
+            Object.values(fields).forEach(f => f.classList.remove('hidden-field'));
         }
     }
 </script>
