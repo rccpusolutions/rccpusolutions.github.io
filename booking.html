@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote / Book Ocular | RCC PU Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Karagdagang styles para sa Form Card na babagay sa theme mo */
+        .form-card { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 30px; 
+            border-radius: 8px; 
+            width: 100%; 
+            max-width: 500px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        .form-card h2 { color: #004d00; margin-bottom: 20px; font-size: 24px; }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; font-weight: bold; color: #004d00; margin-bottom: 5px; }
+        .form-card input, .form-card select { 
+            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; 
+        }
+        .hidden-field { display: none; }
+        .btn-nav { width: 100%; border: none; cursor: pointer; margin-top: 10px; }
+        .btn-back { background-color: #6c757d !important; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="logo.png" alt="Logo">
+        <span class="company-name">RCC PU Solutions</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html" style="border-bottom: 2px solid #00a651;">Booking</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<section class="hero-section contact-bg">
+    <div class="hero-content">
+        <div class="form-card" style="margin: 0 auto;">
+            <!-- Paalala: Ilagay ang iyong Formspree ID sa action link -->
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                
+                <!-- STEP 1: Contact Details -->
+                <div class="form-step active" id="step1">
+                    <h2>Step 1: Contact Details</h2>
+                    <div class="input-group">
+                        <input type="text" name="Full Name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="Email Address" placeholder="Email Address" required>
+                    </div>
+                    <button type="button" class="button btn-nav" onclick="nextStep()">Next: Project Details</button>
+                </div>
+
+                <!-- STEP 2: Selection -->
+                <div class="form-step" id="step2">
+                    <h2>Step 2: Project Details</h2>
+                    <div class="input-group">
+                        <label>Service Needed</label>
+                        <select name="Request Type" id="requestChoice" onchange="updateFormFields()" required>
+                            <option value="">-- Select Option --</option>
+                            <option value="Quotation Only">Get Estimated Quotation</option>
+                            <option value="Ocular Only">Schedule an Ocular Inspection</option>
+                            <option value="Both">Both (Quotation + Ocular)</option>
+                        </select>
+                    </div>
+
+                    <div id="dynamicFields">
+                        <div class="input-group hidden-field" id="serviceTypeDiv">
+                            <label>Service Type</label>
+                            <select name="Service Type">
+                                <option value="PU Flooring">PU Flooring</option>
+                                <option value="Epoxy Coating">Epoxy Coating</option>
+                                <option value="Waterproofing">Waterproofing</option>
+                            </select>
+                        </div>
+                        <div class="input-group hidden-field" id="sqmDiv">
+                            <input type="text" name="SQM" placeholder="Estimated SQM">
+                        </div>
+                        <div class="input-group hidden-field" id="locationDiv">
+                            <input type="text" name="Location" placeholder="Exact Location / Address">
+                        </div>
+                        <div class="input-group hidden-field" id="dateDiv">
+                            <label>Preferred Ocular Date</label>
+                            <input type="date" name="Preferred Date">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="button btn-nav">Submit Request</button>
+                    <button type="button" class="button btn-nav btn-back" onclick="prevStep()">Back</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 RCC PU Solutions. All rights reserved.
+</footer>
+
+<script>
+    function nextStep() {
+        document.getElementById('step1').classList.remove('active');
+        document.getElementById('step2').classList.add('active');
+    }
+    function prevStep() {
+        document.getElementById('step2').classList.remove('active');
+        document.getElementById('step1').classList.add('active');
+    }
+    function updateFormFields() {
+        const choice = document.getElementById('requestChoice').value;
+        const fields = {
+            service: document.getElementById('serviceTypeDiv'),
+            sqm: document.getElementById('sqmDiv'),
+            loc: document.getElementById('locationDiv'),
+            date: document.getElementById('dateDiv')
+        };
+        Object.values(fields).forEach(el => el.classList.add('hidden-field'));
+        
+        if (choice === "Quotation Only") {
+            ['service', 'sqm', 'loc'].forEach(k => fields[k].classList.remove('hidden-field'));
+        } else if (choice === "Ocular Only") {
+            ['service', 'loc', 'date'].forEach(k => fields[k].classList.remove('hidden-field'));
+        } else if (choice === "Both") {
+            Object.values(fields).forEach(el => el.classList.remove('hidden-field'));
+        }
+    }
+</script>
+
+</body>
+</html>
