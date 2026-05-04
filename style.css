@@ -1,6 +1,6 @@
 /* ==========================================================================
    1. GLOBAL RESET & BASE STYLES
-   ========================================================================== */
+   ========================================================================= */
 * { 
     margin: 0; 
     padding: 0; 
@@ -15,8 +15,8 @@ body, html {
 }
 
 /* ==========================================================================
-   2. FIXED HEADER & FOOTER
-   ========================================================================== */
+   2. FIXED HEADER (Desktop Default)
+   ========================================================================= */
 header {
     display: flex; 
     justify-content: space-between; 
@@ -55,7 +55,6 @@ nav a {
     margin-left: 25px; 
     font-weight: bold; 
     transition: 0.3s;
-    white-space: nowrap; /* Mahalaga para hindi maputol ang text */
 }
 
 footer { 
@@ -66,8 +65,8 @@ footer {
 }
 
 /* ==========================================================================
-   3. HERO SECTION - Global Layout
-   ========================================================================== */
+   3. HERO SECTION & LAYOUT
+   ========================================================================= */
 body { 
     padding-top: 80px; 
 }
@@ -106,9 +105,7 @@ p {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* ==========================================================================
-   4. BACKGROUNDS
-   ========================================================================== */
+/* Backgrounds - Pinanatili ang original settings */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-bg.jpg'); }
 .company-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('company-bg.jpg'); }
 .mission-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('mission-bg.jpg'); }
@@ -116,20 +113,9 @@ p {
 .services-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('services-bg.jpg'); }
 .contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
-/* Sub-pages Backgrounds */
-.pu-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pu-overview-bg.jpg'); }
-.coldstorage-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('coldstorage-bg.jpg'); }
-.hatchery-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hatchery-bg.jpg'); }
-.dressingplant-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('dressingplant-bg.jpg'); }
-.epoxy-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-overview-bg.jpg'); }
-.epoxy-mortar-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-mortar-bg.jpg'); }
-.epoxy-paint-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-paint-bg.jpg'); }
-.waterproofing-overview-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('waterproofing-overview-bg.jpg'); }
-.roofdeck-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('roofdeck-bg.jpg'); }
-
 /* ==========================================================================
-   5. SERVICES & BUTTONS
-   ========================================================================== */
+   4. SERVICES (Waterproofing, PU, Epoxy)
+   ========================================================================= */
 .services-vertical-list {
     display: flex; flex-direction: column; gap: 20px; align-items: center; margin: 40px 0;
 }
@@ -141,17 +127,6 @@ p {
     border-radius: 8px; width: 100%; max-width: 500px; transition: 0.3s;
 }
 
-.ready-to-start {
-    color: white !important; font-size: 24px; margin: 30px 0 15px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8); display: block;
-}
-
-.btn-back-services {
-    display: table; margin: 60px auto; background-color: #00a651; 
-    color: white !important; padding: 12px 35px; text-decoration: none; 
-    font-weight: bold; border-radius: 5px; transition: 0.3s; text-align: center;
-}
-
 .button {
     display: inline-block; background-color: #00a651; color: white !important;
     padding: 15px 35px; text-decoration: none; font-weight: bold;
@@ -159,42 +134,12 @@ p {
 }
 
 /* ==========================================================================
-   6. CONTACT PAGE LAYOUT
-   ========================================================================== */
-.contact-tagline { margin-bottom: 50px !important; }
-.contact-layout-grid { display: flex; flex-direction: column; gap: 15px; }
-.contact-row { display: flex; justify-content: center; gap: 15px; width: 100%; }
-.row-quad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-
-.contact-item-card {
-    background-color: rgba(255, 255, 255, 0.1); padding: 20px 10px;
-    border-radius: 5px; text-decoration: none; display: flex;
-    flex-direction: column; align-items: center; justify-content: center;
-    transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.location-highlight, .whatsapp-highlight {
-    width: 100%; max-width: 550px; flex-direction: row; gap: 20px;
-}
-
-.whatsapp-highlight { background-color: #00a651; border: none; }
-.contact-icon-main { font-size: 30px; color: #00a651; margin-bottom: 10px; }
-.whatsapp-highlight .contact-icon-main { color: white; margin-bottom: 0; }
-.contact-info-text h3 { color: #00a651; font-size: 14px; margin-bottom: 5px; }
-.whatsapp-highlight .contact-info-text h3 { color: white; font-size: 18px; margin-bottom: 0; }
-.contact-info-text p { color: white !important; font-size: 14px !important; margin-bottom: 0 !important; text-shadow: none !important; }
-
-/* ==========================================================================
-   7. MOBILE RESPONSIVENESS (HEADER FIXED HERE)
-   ========================================================================== */
-@media (max-width: 900px) {
-    .row-quad { grid-template-columns: 1fr 1fr; }
-}
-
+   5. MOBILE FIX - CLEAN & SCROLLABLE
+   ========================================================================= */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
-        padding: 10px 0 0 0; /* Tinanggal ang padding sa ilalim para sa nav border */
+        padding: 10px 0 0 0;
         height: auto;
     }
 
@@ -204,33 +149,33 @@ p {
         width: 100%;
     }
 
-    /* FIX: Navigation Scrollable sa Mobile */
+    /* Ginawang scrollable ang menu para hindi mag-overlap */
     nav {
         display: flex;
-        justify-content: flex-start; /* Start sa kaliwa para sa scroll */
+        justify-content: flex-start;
         width: 100%;
-        overflow-x: auto; /* Ginagawang swipeable ang menu */
+        overflow-x: auto;
         padding: 10px 15px;
         border-top: 1px solid #eee;
-        -webkit-overflow-scrolling: touch; /* Smooth scroll sa iPhone */
+        -webkit-overflow-scrolling: touch;
     }
 
     nav a {
-        margin: 0 12px; /* Space sa pagitan ng menu */
+        margin: 0 12px;
         font-size: 13px;
-        flex-shrink: 0; /* Hindi mapipipi ang text */
+        flex-shrink: 0; /* Important: hindi mapipipi ang text */
+        white-space: nowrap;
     }
 
-    /* Tago ang scrollbar para malinis */
     nav::-webkit-scrollbar { display: none; }
 
-    /* Space para sa mas malaking header */
-    body { padding-top: 125px; } 
+    /* Adjust padding para sa content sa ilalim */
+    body { padding-top: 130px; } 
 
-    /* Layout fixes */
-    .row-quad { grid-template-columns: 1fr; }
-    h1 { font-size: 28px; }
-    p { font-size: 16px; }
-    .location-highlight, .whatsapp-highlight { flex-direction: column; }
-    .btn-back-services { margin: 40px auto; }
+    h1 { font-size: 30px; }
+    p { font-size: 18px; }
+    
+    .hero-section {
+        min-height: 70vh; /* Para hindi masyadong mahaba sa phone */
+    }
 }
