@@ -1,4 +1,4 @@
-/* --- ORIGINAL STYLES (HINDI GINALAW) --- */
+/* --- GLOBAL STYLES --- */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+/* --- HEADER & NAVIGATION (DESKTOP) --- */
 header {
     background-color: #fff;
     padding: 15px 5%;
@@ -32,6 +33,7 @@ header {
 
 .header-left img {
     height: 50px;
+    width: auto;
 }
 
 .company-name {
@@ -42,7 +44,7 @@ header {
 
 nav {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav a {
@@ -56,7 +58,7 @@ nav a:hover {
     color: #00a651;
 }
 
-/* --- HERO SECTIONS & CONTENT --- */
+/* --- HERO SECTIONS --- */
 .hero-section {
     height: 80vh;
     display: flex;
@@ -66,6 +68,7 @@ nav a:hover {
     color: white;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -73,15 +76,17 @@ nav a:hover {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    max-width: 800px;
+    padding: 20px;
 }
 
-/* Background Images */
+/* Backgrounds */
 .home-main { background-image: url('hero-bg.jpg'); }
 .company-bg { background-image: url('about-bg.jpg'); }
 .mission-bg { background-image: url('mission-bg.jpg'); }
@@ -92,7 +97,7 @@ nav a:hover {
 .button {
     background-color: #00a651;
     color: white;
-    padding: 12px 25px;
+    padding: 15px 35px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -100,6 +105,7 @@ nav a:hover {
     display: inline-block;
 }
 
+/* --- FOOTER --- */
 footer {
     background-color: #222;
     color: white;
@@ -108,36 +114,44 @@ footer {
 }
 
 /* ====================================================== */
-/* --- PHONE ONLY FIX (ITO LANG ANG DINAGDAG) --- */
+/* --- MOBILE ONLY ADJUSTMENT (Para sa Phone lang) --- */
 /* ====================================================== */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Logo sa taas, Menu sa baba */
-        padding: 10px 0;
+        flex-direction: column; /* Logo sa itaas, Menu sa ibaba */
+        padding: 15px 0 10px 0;
+        text-align: center;
     }
 
     .header-left {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        justify-content: center;
     }
 
     nav {
         display: flex;
-        overflow-x: auto; /* Swipe pakanan sa phone */
+        overflow-x: auto; /* Pinapayagan ang swipe pakanan */
         white-space: nowrap; /* Isang linya lang ang menu */
         width: 100%;
-        padding: 10px 15px;
-        gap: 20px;
-        -webkit-overflow-scrolling: touch;
+        padding: 10px 20px;
+        gap: 25px;
+        -webkit-overflow-scrolling: touch; /* Smooth swipe sa iPhone */
         justify-content: flex-start;
-        border-top: 1px solid #eee; /* Pantanda na hiwalay ang menu */
+        border-top: 1px solid #eee;
     }
 
     nav a {
         font-size: 14px;
-        flex-shrink: 0; /* Huwag hayaang mapipi ang text */
+        flex-shrink: 0; /* Hindi hahayaang mapipi ang text */
+        padding-bottom: 5px;
     }
 
-    /* Tago ang scrollbar para malinis */
-    nav::-webkit-scrollbar { display: none; }
-    nav { -ms-overflow-style: none; scrollbar-width: none; }
+    /* Tinatago ang scrollbar para malinis sa phone */
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+    nav {
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+    }
 }
