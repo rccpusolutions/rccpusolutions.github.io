@@ -1,6 +1,6 @@
 /* ==========================================================================
    1. GLOBAL RESET & BASE STYLES
-   ========================================================================= */
+   ========================================================================== */
 * { 
     margin: 0; 
     padding: 0; 
@@ -11,12 +11,13 @@ body, html {
     height: 100%; 
     font-family: Arial, sans-serif; 
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Pinipigilan ang "sirang website" look sa phone */
+    width: 100%;
 }
 
 /* ==========================================================================
    2. FIXED HEADER (Desktop Default)
-   ========================================================================= */
+   ========================================================================== */
 header {
     display: flex; 
     justify-content: space-between; 
@@ -55,21 +56,13 @@ nav a {
     margin-left: 25px; 
     font-weight: bold; 
     transition: 0.3s;
-}
-
-footer { 
-    text-align: center; 
-    padding: 30px; 
-    background-color: #00a651; 
-    color: white; 
+    white-space: nowrap;
 }
 
 /* ==========================================================================
-   3. HERO SECTION & LAYOUT
-   ========================================================================= */
-body { 
-    padding-top: 80px; 
-}
+   3. HERO SECTION & SERVICES (Original Layout)
+   ========================================================================== */
+body { padding-top: 80px; }
 
 .hero-section {
     min-height: 100vh;
@@ -105,17 +98,11 @@ p {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* Backgrounds - Pinanatili ang original settings */
+/* Backgrounds */
 .home-main { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-bg.jpg'); }
-.company-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('company-bg.jpg'); }
-.mission-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('mission-bg.jpg'); }
-.chooseus-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('chooseus-bg.jpg'); }
 .services-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('services-bg.jpg'); }
-.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
-/* ==========================================================================
-   4. SERVICES (Waterproofing, PU, Epoxy)
-   ========================================================================= */
+/* Services Layout (Waterproofing / Epoxy) */
 .services-vertical-list {
     display: flex; flex-direction: column; gap: 20px; align-items: center; margin: 40px 0;
 }
@@ -127,16 +114,17 @@ p {
     border-radius: 8px; width: 100%; max-width: 500px; transition: 0.3s;
 }
 
-.button {
-    display: inline-block; background-color: #00a651; color: white !important;
-    padding: 15px 35px; text-decoration: none; font-weight: bold;
-    border-radius: 5px; transition: 0.3s;
+footer { 
+    text-align: center; 
+    padding: 30px; 
+    background-color: #00a651; 
+    color: white; 
 }
 
 /* ==========================================================================
-   5. MOBILE FIX - CLEAN & SCROLLABLE
-   ========================================================================= */
-@media (max-width: 600px) {
+   4. MOBILE-ONLY FIX (Hindi madadamay ang Desktop)
+   ========================================================================== */
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         padding: 10px 0 0 0;
@@ -149,7 +137,11 @@ p {
         width: 100%;
     }
 
-    /* Ginawang scrollable ang menu para hindi mag-overlap */
+    .company-name {
+        font-size: 20px;
+    }
+
+    /* Swipeable Menu Fix */
     nav {
         display: flex;
         justify-content: flex-start;
@@ -161,21 +153,23 @@ p {
     }
 
     nav a {
-        margin: 0 12px;
+        margin: 0 12px !important;
         font-size: 13px;
-        flex-shrink: 0; /* Important: hindi mapipipi ang text */
-        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     nav::-webkit-scrollbar { display: none; }
 
-    /* Adjust padding para sa content sa ilalim */
-    body { padding-top: 130px; } 
+    /* Adjust space sa ilalim ng header */
+    body { padding-top: 135px; } 
 
+    /* Mobile Text Sizes */
     h1 { font-size: 30px; }
     p { font-size: 18px; }
-    
-    .hero-section {
-        min-height: 70vh; /* Para hindi masyadong mahaba sa phone */
+
+    /* Services bar adjustment */
+    .services-list-bar {
+        width: 95%;
+        padding: 15px;
     }
 }
