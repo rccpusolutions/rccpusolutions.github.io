@@ -37,7 +37,7 @@ header {
 }
 
 .company-name {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: bold;
     color: #004d00;
 }
@@ -54,17 +54,16 @@ nav a {
     font-size: 0.9rem;
 }
 
-/* HERO SECTION (PARA SA HOME PAGE) */
+/* --- HOME PAGE HERO SECTION --- */
 .hero {
     height: 100vh;
     width: 100%;
-    background: url('home-bg.jpg') no-repeat center center/cover;
+    background: url('home-bg.jpg') no-repeat center center/cover; /* Siguraduhing tama ang filename ng home background mo */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     text-align: center;
-    padding: 0 20px;
 }
 
 .hero::before {
@@ -74,7 +73,7 @@ nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Overlay para sa Home */
     z-index: 1;
 }
 
@@ -82,18 +81,23 @@ nav a {
     position: relative;
     z-index: 2;
     color: white;
+    padding: 0 20px;
 }
 
-/* ABOUT US FULL-HEIGHT SECTIONS */
+.hero-content h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: 10px;
+}
+
+/* --- ABOUT US FULL-HEIGHT SECTIONS --- */
 .about-section {
-    height: 100vh; /* Katulad ng Home page size */
+    height: 100vh; 
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
     color: white;
     background-size: cover !important;
     background-position: center !important;
@@ -107,7 +111,7 @@ nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Dark overlay para mabasa ang text */
+    background: rgba(0, 0, 0, 0.65); /* Overlay para sa About */
     z-index: 1;
 }
 
@@ -115,7 +119,6 @@ nav a {
     position: relative;
     z-index: 2;
     padding: 0 10%;
-    width: 100%;
     max-width: 900px;
 }
 
@@ -124,13 +127,11 @@ nav a {
     color: #00a651;
     font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .about-content p {
     font-size: clamp(1rem, 4vw, 1.25rem);
     line-height: 1.6;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* FOOTER */
@@ -141,17 +142,4 @@ footer {
     padding: 20px;
     position: relative;
     z-index: 10;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    nav {
-        display: none; /* Pwedeng lagyan ng burger menu sa susunod */
-    }
-    .about-content h2 {
-        font-size: 2.2rem;
-    }
-    .about-content p {
-        font-size: 1rem;
-    }
 }
