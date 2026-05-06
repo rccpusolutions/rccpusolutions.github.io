@@ -9,7 +9,7 @@
 body {
     overflow-x: hidden;
     background-color: #f4f4f4;
-    padding-top: 80px; /* Space para sa fixed header */
+    padding-top: 80px; /* Para hindi matakpan ng fixed header ang content */
 }
 
 /* HEADER & NAVIGATION */
@@ -60,7 +60,7 @@ nav a:hover {
     color: #004d00;
 }
 
-/* GENERIC SECTION STYLING (Para sa content) */
+/* SECTION STYLING */
 section {
     min-height: 100vh;
     width: 100%;
@@ -68,13 +68,12 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
+    padding: 20px;
 }
 
-.content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
+h1 {
+    color: #004d00;
+    margin-bottom: 20px;
 }
 
 footer {
@@ -82,26 +81,19 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    position: relative;
-    z-index: 10;
 }
 
-/* Responsive for Mobile */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         height: auto;
         padding: 10px;
     }
-    
     nav {
         margin-top: 10px;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-    }
-    
-    nav a {
-        font-size: 0.8rem;
     }
 }
