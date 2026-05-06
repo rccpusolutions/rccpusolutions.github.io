@@ -17,7 +17,7 @@ header {
 nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; transition: 0.3s; }
 
 /* ==========================================================================
-   HERO SECTIONS (Fixing Background Issues)
+   HERO SECTIONS & BACKGROUNDS (Fix for image_864e6f.png)
    ========================================================================== */
 .hero-section {
     min-height: 80vh; width: 100%; display: flex; justify-content: center; 
@@ -25,27 +25,23 @@ nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; fon
     background-position: center !important; background-repeat: no-repeat !important;
     padding: 100px 20px; position: relative;
 }
-/* Tint for readability */
+/* Overlay to make text readable */
 .hero-section::before {
     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.6); z-index: 1;
 }
 .hero-content { position: relative; z-index: 5; width: 100%; max-width: 1100px; color: white; }
 
-/* Background image assignments */
+/* Background Image Assignments */
 .home-main { background-image: url('home-bg.jpg') !important; }
-.about-main { background-image: url('company-bg.jpg') !important; }
-.services-main { background-image: url('services-bg.jpg') !important; }
 .contact-main { background-image: url('contact-bg.jpg') !important; }
-
-/* PU Flooring Specific Backgrounds */
 .pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
 .cold-storage-bg { background-image: url('cold-storage-bg.jpg') !important; }
 .hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
 .dressing-plant-bg { background-image: url('dressing-plant-bg.jpg') !important; }
 
 /* ==========================================================================
-   CONTACT PAGE FIX
+   CONTACT GRID (Fix for broken layout)
    ========================================================================== */
 .contact-grid-container { 
     display: flex; flex-direction: column; gap: 20px; 
@@ -66,9 +62,9 @@ nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; fon
 }
 
 /* ==========================================================================
-   FOOTER & BUTTONS
+   BUTTONS & FOOTER (Fix for image_864e94.png)
    ========================================================================== */
 .service-footer-btns { display: flex; justify-content: center; gap: 20px; padding: 60px 20px; background: white; }
-.button { display: inline-block; background-color: #00a651; color: white !important; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+.button { display: inline-block; background-color: #00a651; color: white !important; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; min-width: 200px; text-align: center; }
 .btn-secondary { background-color: #555555 !important; }
-footer { text-align: center; padding: 25px; background: #00a651; color: white; margin-top: auto; }
+footer { text-align: center; padding: 25px; background: #00a651; color: white; margin-top: auto; width: 100%; }
