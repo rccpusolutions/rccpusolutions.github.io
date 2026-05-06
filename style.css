@@ -1,9 +1,9 @@
 /* ==========================================================================
-   GLOBAL STYLES & NAVBAR
+   GLOBAL RESET & NAVBAR (Clean Version)
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body, html { width: 100%; overflow-x: hidden; font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; }
-body { padding-top: 85px; min-height: 100vh; display: flex; flex-direction: column; background-color: #f4f4f4; }
+body { padding-top: 85px; min-height: 100vh; display: flex; flex-direction: column; }
 
 header {
     display: flex; justify-content: space-between; align-items: center;
@@ -18,42 +18,51 @@ nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; fon
 nav a:hover { color: #004d00 !important; }
 
 /* ==========================================================================
-   HERO SECTIONS
+   HERO SECTIONS & ALL BACKGROUNDS
    ========================================================================== */
 .hero-section {
-    min-height: 80vh; width: 100%; display: flex; justify-content: center; 
+    min-height: 90vh; width: 100%; display: flex; justify-content: center; 
     align-items: center; text-align: center; background-size: cover; 
     background-position: center; padding: 100px 20px; position: relative;
 }
 .hero-content { position: relative; z-index: 5; width: 100%; max-width: 1100px; color: white; }
 
-/* Backgrounds */
+/* Main Backgrounds */
+.home-main { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-bg.jpg'); }
+.services-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('services-bg.jpg'); }
+.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
+
+/* About Backgrounds */
+.company-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('company-bg.jpg'); }
+.mission-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('mission-bg.jpg'); }
+.chooseus-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('chooseus-bg.jpg'); }
+
+/* Service-specific Backgrounds */
 .pu-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pu-bg.jpg'); }
 .epoxy-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('epoxy-bg.jpg'); }
 .waterproofing-bg { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('waterproofing-bg.jpg'); }
-.contact-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('contact-bg.jpg'); }
 
 /* ==========================================================================
-   BUTTONS & FOOTER LAYOUT
+   BUTTONS & TYPOGRAPHY
    ========================================================================== */
+h1 { font-size: 48px; color: #00a651; text-shadow: 2px 2px 8px #000; margin-bottom: 20px; font-weight: bold; }
+p { font-size: 20px; text-shadow: 1px 1px 4px #000; margin-bottom: 30px; color: white; }
+
 .button {
     display: inline-block; background-color: #00a651; color: white !important;
-    padding: 15px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; border: none; cursor: pointer;
+    padding: 15px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;
 }
 .button:hover { background-color: #008541; transform: scale(1.05); }
 .btn-secondary { background-color: #555 !important; }
-.btn-secondary:hover { background-color: #333 !important; }
 
-.service-footer-btns {
-    display: flex; justify-content: center; gap: 20px; padding: 60px 20px;
-    background: #fff; width: 100%;
-}
+/* Service Footer Buttons Layout */
+.service-footer-btns { display: flex; justify-content: center; gap: 20px; padding: 60px 0; background: #fff; width: 100%; }
 
 /* ==========================================================================
    AESTHETIC CONTACT GRID
    ========================================================================== */
 .contact-grid-container { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 900px; margin: 0 auto; }
-.location-box { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); padding: 20px; border-radius: 12px; color: white; backdrop-filter: blur(10px); }
+.location-box { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.3); padding: 20px; border-radius: 12px; color: white; }
 .contact-sub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .contact-box { 
     background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); 
@@ -61,15 +70,10 @@ nav a:hover { color: #004d00 !important; }
     transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; gap: 10px; backdrop-filter: blur(5px);
 }
 .contact-box i { font-size: 40px; }
-.contact-box.fb:hover { background: #1877F2; transform: translateY(-5px); }
-.contact-box.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); transform: translateY(-5px); }
-.contact-box.mail:hover { background: #D44638; transform: translateY(-5px); }
-.contact-box.phone:hover { background: #00a651; transform: translateY(-5px); }
+.contact-box.fb:hover { background: #1877F2; }
+.contact-box.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.contact-box.mail:hover { background: #D44638; }
 
-.whatsapp-wide-btn { 
-    background: #25D366; color: white; padding: 18px; border-radius: 12px; 
-    text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s;
-}
-.whatsapp-wide-btn:hover { background: #128C7E; }
+.whatsapp-wide-btn { background: #25D366; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-footer { text-align: center; padding: 25px; background: #00a651; color: white; margin-top: auto; }
+footer { text-align: center; padding: 25px; background: #00a651; color: white; margin-top: auto; width: 100%; }
