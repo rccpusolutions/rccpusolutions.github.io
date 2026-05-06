@@ -1,46 +1,63 @@
-/* GLOBAL RESET */
+/* ==========================================================================
+   CLEAN RESTORED STYLE (Based on Screenshots)
+   ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { width: 100%; min-height: 100vh; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; }
+body, html { width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f4f4; }
 
-/* NAVBAR FIX */
+/* NAVBAR - Green & White Theme */
 header {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0 5%; background: #ffffff; border-bottom: 3px solid #00a651;
-    position: fixed; top: 0; width: 100%; z-index: 1000; height: 80px;
+    padding: 15px 5%; background: #ffffff; border-bottom: 3px solid #00a651;
+    position: fixed; top: 0; width: 100%; z-index: 1000; height: 85px;
 }
 .header-left { display: flex; align-items: center; }
-.header-left img { height: 50px; margin-right: 15px; }
-.company-name { font-size: 22px; font-weight: bold; color: #004d00; }
-nav a { color: #00a651; text-decoration: none; margin-left: 15px; font-weight: bold; font-size: 14px; }
+.header-left img { height: 55px; margin-right: 15px; }
+.company-name { font-size: 26px; font-weight: bold; color: #004d00; }
 
-/* HERO & BACKGROUNDS */
+nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 15px; }
+nav a:hover { text-decoration: underline; }
+
+/* HERO SECTIONS - Full Screen with Dark Overlay */
 .hero-section {
-    min-height: 80vh; width: 100%; display: flex; justify-content: center; 
-    align-items: center; text-align: center; position: relative; padding: 80px 20px;
+    min-height: 100vh; width: 100%; display: flex; justify-content: center; 
+    align-items: center; text-align: center; position: relative;
     background-size: cover !important; background-position: center !important;
 }
 .hero-section::before {
     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6); z-index: 1;
+    background: rgba(0, 0, 0, 0.55); z-index: 1;
 }
-.hero-content { position: relative; z-index: 5; color: white; width: 100%; max-width: 800px; }
+.hero-content { position: relative; z-index: 5; color: white; padding: 20px; width: 100%; max-width: 900px; }
 
-/* BACKGROUND ASSIGNMENTS */
-.bg-home { background-image: url('home-bg.jpg') !important; }
-.bg-contact { background-image: url('contact-bg.jpg') !important; }
-.bg-pu-1 { background-image: url('pu-overview-bg.jpg') !important; }
-.bg-pu-2 { background-image: url('cold-storage-bg.jpg') !important; }
-.bg-pu-3 { background-image: url('hatchery-bg.jpg') !important; }
-.bg-pu-4 { background-image: url('dressing-plant-bg.jpg') !important; }
+/* TEXT STYLING (Based on screenshots) */
+h1 { font-size: 48px; color: #00a651; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 20px; font-weight: bold; }
+.hero-content p { font-size: 20px; line-height: 1.6; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
 
-/* CONTACT GRID */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-.contact-card { background: rgba(255,255,255,0.1); padding: 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; text-decoration: none; }
+/* GLASSMORPHISM CONTACT BOXES (As seen in your last screenshot) */
+.contact-grid-container { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px; }
+.contact-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; width: 100%; }
 
-/* FOOTER BUTTONS - Lowered near footer */
-.action-area { padding: 60px 20px; display: flex; justify-content: center; gap: 15px; background: white; }
-.btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; min-width: 150px; text-align: center; }
-.btn-green { background: #00a651; color: white; }
-.btn-gray { background: #555; color: white; }
+.contact-box {
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px; border-radius: 5px; color: white; text-decoration: none;
+    min-width: 200px; text-align: center; transition: 0.3s;
+}
+.contact-box:hover { background: rgba(255, 255, 255, 0.25); }
+.contact-box i { font-size: 24px; color: #00a651; margin-bottom: 10px; display: block; }
 
-footer { background: #00a651; color: white; text-align: center; padding: 20px; margin-top: auto; }
+.whatsapp-btn {
+    background-color: #00a651; color: white !important; width: 100%; max-width: 500px;
+    padding: 15px; border-radius: 5px; font-weight: bold; text-decoration: none;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+
+/* BUTTONS */
+.view-btn {
+    background: #00a651; color: white; padding: 15px 35px; border-radius: 5px;
+    text-decoration: none; font-weight: bold; font-size: 18px; display: inline-block; margin-top: 25px;
+}
+
+/* FOOTER */
+footer { text-align: center; padding: 25px; background: #00a651; color: white; }
