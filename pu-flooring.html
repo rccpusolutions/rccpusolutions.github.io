@@ -6,6 +6,30 @@
     <title>Polyurethane (PU) Flooring | RCC PU Solutions</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .detail-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .detail-card h3 {
+            color: #00a651;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #00a651;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -21,22 +45,38 @@
 
 <section class="hero-section pu-bg">
     <div class="hero-content">
-        <h1>Polyurethane (PU) Flooring</h1>
-        <p>Premium industrial coating for cold storage and heavy industries.</p>
-        
-        <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); text-align: left; max-width: 800px; margin: 0 auto; color: white;">
-            <h3 style="color: #00a651; margin-bottom: 15px;">Key Features:</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 10px;">✅ <b>Thermal Shock Resistance:</b> Perfect for walk-in freezers and cold storage.</li>
-                <li style="margin-bottom: 10px;">✅ <b>Chemical Resistance:</b> Protection against acids, alkalis, and solvents.</li>
-                <li style="margin-bottom: 10px;">✅ <b>High Durability:</b> Withstands heavy machinery and constant foot traffic.</li>
-                <li style="margin-bottom: 10px;">✅ <b>Hygienic Surface:</b> Seamless and easy-to-clean finish for food & beverage plants.</li>
-            </ul>
+        <h1>Polyurethane (PU) Flooring Systems</h1>
+        <p>Premium industrial coating built for the most demanding environments.</p>
+
+        <!-- OVERVIEW SECTION -->
+        <div class="detail-card" style="max-width: 900px; margin: 0 auto 30px auto; text-align: center;">
+            <h3>Overview</h3>
+            <p>Our Polyurethane (PU) flooring is a high-performance, seamless, and heavy-duty solution specifically engineered for industries requiring extreme durability, thermal shock resistance, and superior hygiene standards.</p>
+        </div>
+
+        <!-- SPECIFIC APPLICATIONS SECTION -->
+        <div class="details-container">
+            <!-- Cold & Dry Storage -->
+            <div class="detail-card">
+                <h3>Cold & Dry Storage</h3>
+                <p>Designed to withstand extreme temperature fluctuations from -40°C to 120°C. It prevents floor cracking in walk-in freezers and provides a slip-resistant surface for dry warehouse operations.</p>
+            </div>
+
+            <!-- Hatchery -->
+            <div class="detail-card">
+                <h3>Hatchery</h3>
+                <p>Provides a non-porous and anti-microbial surface essential for hatcheries. It is resistant to constant washdowns and prevents the growth of bacteria, ensuring a sterile environment for livestock production.</p>
+            </div>
+
+            <!-- Dressing Plant -->
+            <div class="detail-card">
+                <h3>Dressing Plant</h3>
+                <p>Highly resistant to organic acids, blood, and fats found in meat processing areas. Its seamless finish allows for easy high-pressure cleaning and meets strict food safety regulations (HACCP/FDA).</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Pantay na Buttons sa Ibaba -->
 <div class="service-footer-btns">
     <a href="services.html" class="button btn-secondary">Back to Services</a>
     <a href="booking.html" class="button">Get a Quote Now</a>
