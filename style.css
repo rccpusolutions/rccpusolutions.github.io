@@ -9,15 +9,15 @@
 body {
     overflow-x: hidden;
     background-color: #f4f4f4;
-    padding-top: 80px; /* Para hindi matakpan ng fixed header ang content */
+    padding-top: 80px; /* Space para sa fixed header */
 }
 
-/* HEADER & NAVIGATION */
+/* FIXED HEADER */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 0 5%;
     background: white;
     border-bottom: 3px solid #00a651;
     position: fixed;
@@ -43,27 +43,27 @@ header {
     color: #004d00;
 }
 
+/* NAVIGATION LINKS */
 nav {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav a {
     color: #00a651;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #004d00;
 }
 
-/* SECTION STYLING */
+/* SECTION CONTENT */
 section {
     min-height: 100vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,29 +71,9 @@ section {
     padding: 20px;
 }
 
-h1 {
-    color: #004d00;
-    margin-bottom: 20px;
-}
-
 footer {
     background: #00a651;
     color: white;
     text-align: center;
     padding: 20px;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-    nav {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
 }
