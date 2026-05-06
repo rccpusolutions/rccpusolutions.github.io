@@ -1,70 +1,46 @@
-/* ==========================================================================
-   BASIC RESET & LAYOUT
-   ========================================================================== */
+/* GLOBAL RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { 
-    width: 100%; 
-    min-height: 100vh; 
-    font-family: 'Segoe UI', Arial, sans-serif; 
-    display: flex; 
-    flex-direction: column; 
-    padding-top: 80px; 
-}
+body, html { width: 100%; min-height: 100vh; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; }
 
-/* NAVBAR */
+/* NAVBAR FIX */
 header {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 5%; background: #ffffff; border-bottom: 3px solid #00a651;
+    padding: 0 5%; background: #ffffff; border-bottom: 3px solid #00a651;
     position: fixed; top: 0; width: 100%; z-index: 1000; height: 80px;
 }
 .header-left { display: flex; align-items: center; }
 .header-left img { height: 50px; margin-right: 15px; }
-.company-name { font-size: 24px; font-weight: bold; color: #004d00; }
-nav a { color: #00a651 !important; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; }
+.company-name { font-size: 22px; font-weight: bold; color: #004d00; }
+nav a { color: #00a651; text-decoration: none; margin-left: 15px; font-weight: bold; font-size: 14px; }
 
-/* ==========================================================================
-   HERO & BACKGROUND SECTIONS
-   ========================================================================== */
+/* HERO & BACKGROUNDS */
 .hero-section {
-    min-height: 80vh; width: 100%; 
-    display: flex; justify-content: center; align-items: center; text-align: center; 
-    background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important;
-    position: relative; padding: 60px 20px;
+    min-height: 80vh; width: 100%; display: flex; justify-content: center; 
+    align-items: center; text-align: center; position: relative; padding: 80px 20px;
+    background-size: cover !important; background-position: center !important;
 }
 .hero-section::before {
     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.6); z-index: 1;
 }
-.hero-content { position: relative; z-index: 5; width: 100%; max-width: 900px; color: white; }
+.hero-content { position: relative; z-index: 5; color: white; width: 100%; max-width: 800px; }
 
-/* MGA BACKGROUNDS - Siguraduhing tama ang filenames sa GitHub */
-#hero-home { background-image: url('home-bg.jpg') !important; }
-#hero-contact { background-image: url('contact-bg.jpg') !important; }
-#pu-overview { background-image: url('pu-overview-bg.jpg') !important; }
-#pu-cold { background-image: url('cold-storage-bg.jpg') !important; }
-#pu-hatchery { background-image: url('hatchery-bg.jpg') !important; }
-#pu-dressing { background-image: url('dressing-plant-bg.jpg') !important; }
+/* BACKGROUND ASSIGNMENTS */
+.bg-home { background-image: url('home-bg.jpg') !important; }
+.bg-contact { background-image: url('contact-bg.jpg') !important; }
+.bg-pu-1 { background-image: url('pu-overview-bg.jpg') !important; }
+.bg-pu-2 { background-image: url('cold-storage-bg.jpg') !important; }
+.bg-pu-3 { background-image: url('hatchery-bg.jpg') !important; }
+.bg-pu-4 { background-image: url('dressing-plant-bg.jpg') !important; }
 
-/* TEXT STYLES */
-h1 { font-size: 45px; color: #00a651; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); margin-bottom: 15px; }
-p { font-size: 18px; color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
+/* CONTACT GRID */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+.contact-card { background: rgba(255,255,255,0.1); padding: 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; text-decoration: none; }
 
-/* ==========================================================================
-   FOOTER BUTTONS (Lowered near footer - image_864e94.png style)
-   ========================================================================== */
-.service-footer-btns {
-    display: flex; justify-content: center; gap: 20px; 
-    padding: 50px 20px; background: #ffffff; width: 100%;
-}
-.button {
-    display: inline-block; padding: 15px 30px; border-radius: 8px; 
-    text-decoration: none; font-weight: bold; min-width: 180px; text-align: center;
-}
-.btn-primary { background-color: #00a651; color: white !important; }
-.btn-secondary { background-color: #444444; color: white !important; }
+/* FOOTER BUTTONS - Lowered near footer */
+.action-area { padding: 60px 20px; display: flex; justify-content: center; gap: 15px; background: white; }
+.btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; min-width: 150px; text-align: center; }
+.btn-green { background: #00a651; color: white; }
+.btn-gray { background: #555; color: white; }
 
-/* CONTACT BOXES */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
-.contact-box { background: rgba(255,255,255,0.1); padding: 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; text-decoration: none; backdrop-filter: blur(5px); }
-
-footer { text-align: center; padding: 20px; background: #00a651; color: white; margin-top: auto; }
+footer { background: #00a651; color: white; text-align: center; padding: 20px; margin-top: auto; }
