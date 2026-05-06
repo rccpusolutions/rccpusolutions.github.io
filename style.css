@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* GLOBAL SETTINGS */
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +11,12 @@ body {
     background-color: #f4f4f4;
 }
 
-/* FIXED HEADER */
+/* NAVIGATION */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
+    padding: 0 5%;
     background: white;
     border-bottom: 3px solid #00a651;
     position: fixed;
@@ -26,72 +26,16 @@ header {
     height: 80px;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-}
+.header-left { display: flex; align-items: center; }
+.header-left img { height: 50px; margin-right: 15px; }
+.company-name { font-size: 1.4rem; font-weight: bold; color: #004d00; }
 
-.header-left img {
-    height: 50px;
-    margin-right: 15px;
-}
+nav { display: flex; gap: 15px; }
+nav a { color: #00a651; text-decoration: none; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; }
 
-.company-name {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    font-weight: bold;
-    color: #004d00;
-}
-
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: #00a651;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-/* --- HOME PAGE HERO SECTION --- */
-.hero {
+/* FULL-HEIGHT SECTIONS */
+.full-page {
     height: 100vh;
-    width: 100%;
-    background: url('home-bg.jpg') no-repeat center center/cover; /* Siguraduhing tama ang filename ng home background mo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay para sa Home */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    margin-bottom: 10px;
-}
-
-/* --- ABOUT US FULL-HEIGHT SECTIONS --- */
-.about-section {
-    height: 100vh; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -104,42 +48,33 @@ nav a {
     background-repeat: no-repeat !important;
 }
 
-.about-section::before {
+.full-page::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Overlay para sa About */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.65);
     z-index: 1;
 }
 
-.about-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 10%;
-    max-width: 900px;
-}
+.content { position: relative; z-index: 2; padding: 0 10%; width: 100%; }
 
-.about-content h2 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    color: #00a651;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+h1, h2 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 20px; color: #00a651; }
+p { font-size: clamp(1rem, 4vw, 1.3rem); line-height: 1.6; }
 
-.about-content p {
-    font-size: clamp(1rem, 4vw, 1.25rem);
-    line-height: 1.6;
-}
-
-/* FOOTER */
-footer {
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
     background: #00a651;
     color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    z-index: 10;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    nav { display: none; }
+    .company-name { font-size: 1.1rem; }
 }
