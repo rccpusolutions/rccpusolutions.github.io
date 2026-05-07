@@ -186,16 +186,11 @@ p {
 /* ==========================================================================
    7. MOBILE RESPONSIVENESS (HEADER FIXED HERE)
    ========================================================================== */
-@media (max-width: 900px) {
-    .row-quad { grid-template-columns: 1fr 1fr; }
-}
-
 @media (max-width: 600px) {
-    /* Header Fix for Phone */
     header {
-        flex-direction: column; /* Ginagawang column ang header elements */
+        flex-direction: column; 
         padding: 10px 0;
-        height: auto; /* Hinahayaan lumaki ang height base sa content */
+        height: auto;
     }
 
     .header-left {
@@ -204,21 +199,32 @@ p {
         width: 100%;
     }
 
+    /* Ito ang magic part para sa scrolling menu */
     nav {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start; /* Simula sa kaliwa ang menu */
         width: 100%;
-        padding-bottom: 5px;
+        overflow-x: auto; /* Pinapayagan ang horizontal scroll */
+        overflow-y: hidden;
+        white-space: nowrap; /* Pinipigilan ang pagbaba ng mga salita */
+        padding: 10px 15px; /* Dagdag space para hindi dikit sa gilid */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling para sa iPhone/Android */
+    }
+
+    /* Tinatago ang scrollbar para malinis tingnan pero scrollable pa rin */
+    nav::-webkit-scrollbar {
+        display: none;
     }
 
     nav a {
-        margin: 0 8px; /* Binawasan ang space para magkasya lahat horizontal */
-        font-size: 12px; /* Bahagyang pinaliit ang font para sa phone screens */
+        margin: 0 15px; /* Tamang distansya para hindi dikit-dikit */
+        font-size: 14px; /* Standard size para madaling mapindot */
+        flex: 0 0 auto; /* Pinipigilan ang pag-shrink ng mga links */
+        display: inline-block;
     }
 
     /* Iba pang mobile adjustments */
-    body { padding-top: 110px; } /* Dinagdagan ang space para hindi matakpan ng mas malaking header */
-    .row-quad { grid-template-columns: 1fr; }
+    body { padding-top: 130px; } 
     h1 { font-size: 28px; }
     p { font-size: 16px; }
     .location-highlight, .whatsapp-highlight { flex-direction: column; }
